@@ -9,6 +9,7 @@ class News(BaseModel):
     """行业资讯表"""
     objects = models.Manager()
     title = models.CharField(max_length=50, verbose_name='标题')
+    content = models.TextField(verbose_name='资讯内容')
 
     class Meta:
         db_table = 'news'
