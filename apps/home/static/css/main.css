@@ -1,9 +1,14 @@
 body{font-family:'Microsoft Yahei';font-size:14px;color:#666;}
 html,body{height:100%}
-
 .head_nav {
     height: 10%;
     background: gray;
+}
+.body{position:relative;overflow:hidden;z-index:0;min-width:800px;max-width:2560px;height:90%;margin:0 auto}
+
+.body_container {
+    height: 100%;
+    width: 100%;
 }
 .logo {
     display: inline-block;
@@ -32,12 +37,21 @@ html,body{height:100%}
     display: inline-block;
     width: 20%;
     text-align: center;
+    transition: 0.2s all liner;
+    cursor: pointer;
 }
+
 .title_link ul li a{
     display: inline-block;
-    height: 100%;
+    height: 80%;
     line-height: 6rem;
 }
+.title_link ul li a:hover{
+    border-bottom: 2px solid red;
+}
+/*.active {
+    border-bottom: 2px solid red;
+}*/
 
 .right_nav {
     font-size: 20px;
@@ -62,26 +76,52 @@ html,body{height:100%}
 }
 .right_nav ul li a{
     display: inline-block;
-    height: 100%;
-    width: 100%;
+    height: 60%;
+    width: 60%;
+    margin-left: 20%;
     line-height: 5rem;
     text-align: center;
 }
-
-.body {
-    position:relative;
-    overflow:hidden;
-    z-index:0;
-    min-width:800px;
-    max-width:2560px;
-    width:90%;
-    height:90%;
+.right_nav ul li a:hover {
+    border-bottom: 2px solid red;
 }
-.body>.container {
-    position:relative;
-    overflow:hidden;
-    z-index:0;
-    height:100%
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swiper-slide {
+    overflow: hidden;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.news_box {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+.swiper-news {
+    width: 40%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 /*页尾隐藏在页面下方，完全透明显示出来后多高内容 -webkit- -moz- 不同浏览器的布局属性*/
 .box_footer{position:absolute;top:auto;left:0;right:0;bottom:-6rem;z-index:1;height:7rem;opacity:0;background:rgba(0,0,0,0.6);-webkit-transition:all .5s;-moz-transition:all .5s;-o-transition:all .5s;-ms-transition:all .5s;transition:all .5s}
