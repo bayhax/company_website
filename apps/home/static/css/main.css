@@ -1,10 +1,25 @@
-body{font-family:'Microsoft Yahei';font-size:14px;color:#666;}
-html,body{height:100%}
+body{font-family:'Microsoft Yahei';font-size:14px;color:#666;
+}
+html,body{height:100%;}
+.bg_img{
+    pointer-events:none;
+    position:fixed;
+    z-index:2;
+    top:0;left:0;height:0;bottom:0;
+    height:100%;
+    width:100%;
+    opacity:0;
+    background:url(../img/bg_1.jpeg);
+    transition: all 1s linear;
+}
+.active_img {
+    opacity:0.2;
+}
 .head_nav {
     height: 10%;
     background: gray;
 }
-.body{position:relative;overflow:hidden;z-index:0;min-width:800px;max-width:2560px;height:90%;margin:0 auto}
+.body_con{position:relative;overflow:hidden;z-index:0;min-width:800px;max-width:2560px;height:90%;margin:0 auto}
 
 .body_container {
     height: 100%;
@@ -124,6 +139,7 @@ html,body{height:100%}
     margin-left: auto;
     margin-right: auto;
 }
+
 /*页尾隐藏在页面下方，完全透明显示出来后多高内容 -webkit- -moz- 不同浏览器的布局属性*/
 .box_footer{position:absolute;top:auto;left:0;right:0;bottom:-6rem;z-index:1;height:7rem;opacity:0;background:rgba(0,0,0,0.6);-webkit-transition:all .5s;-moz-transition:all .5s;-o-transition:all .5s;-ms-transition:all .5s;transition:all .5s}
 /*鼠标移动到什么区域可以显示页尾，中间高两边低*/
