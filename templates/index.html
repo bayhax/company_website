@@ -21,7 +21,7 @@
             <div class="logo"><img src="{% static 'img/baymax.jpg' %}" alt="logo" height="83rem"></div>
             <div class="title_link">
                 <ul>
-                    <li class="li"><a href="/home/index#index" id="index_head">首页</a></li>
+                    <li class="li"><a href="/home/index#index" class="active" id="index_head">首页</a></li>
                     <li class="li"><a href="/home/index#game" id="game_head">游戏</a></li>
                     <li class="li"><a href="/home/index#news" id="news_head">行业资讯</a></li>
                     <li class="li"><a href="/home/index#about" id="about_head">关于我们</a></li>
@@ -32,7 +32,7 @@
     <!--网页右边导航块-->
     <div class="right_nav">
             <ul>
-                <li class="li"><a href="/home/index#index" id="index_right">1</a></li>
+                <li class="li"><a href="/home/index#index" class="active" id="index_right">1</a></li>
                 <li class="li"><a href="/home/index#game" id="game_right">2</a></li>
                 <li class="li"><a href="/home/index#news" id="news_right">3</a></li>
                 <li class="li"><a href="/home/index#about" id="about_right">4</a></li>
@@ -121,7 +121,21 @@
     })
 
     // 导航追踪
-
+    window.onhashchange=function(event){
+        if(window.location.hash=="#index"){
+            $("#index_head,#index_right").addClass("active")
+            $("#game_head,#game_right,#news_head,#news_right,#about_head,#about_right").removeClass("active")
+        }else if(window.location.hash=="#game"){
+            $("#game_head,#game_right").addClass("active")
+            $("#index_head,#index_right,#news_head,#news_right,#about_head,#about_right").removeClass("active")
+        }else if(window.location.hash=="#news"){
+            $("#news_head,#news_right").addClass("active")
+            $("#game_head,#game_right,#index_head,#index_right,#about_head,#about_right").removeClass("active")
+        }else{
+            $("#about_head,#about_right").addClass("active")
+            $("#game_head,#game_right,#news_head,#news_right,#index_head,#index_right").removeClass("active")
+        };
+    }
     </script>
 </body>
 </html>
