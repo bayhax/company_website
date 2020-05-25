@@ -135,11 +135,44 @@ html,body{height:100%;}
 }
 .swiper-news {
     width: 40%;
-    height: 100%;
+    height: 80%;
     margin-left: auto;
     margin-right: auto;
 }
-
+// 自定义分页器样式
+.news_box button {
+    display:none;
+}
+.news_box .button_news {
+    width: 6rem;
+    height: 4rem;
+    margin:0 2rem;
+    outline: none;
+    text-align:center;
+    line-height:100%;
+    padding:0.3em;
+    border: 0px;
+    border-radius:30px;
+    box-shadow:0px 1px 2px rgba(0,0,0,0.2);
+    text-shadow:0px 1px 1px rgba(0,0,0,0.3);
+    color:#fefee9;
+    border:0.2px solid #2299ff;
+    background-repeat:repeat;
+    background-size:auto;
+    background-origin:padding-box;
+    background-clip:padding-box;
+    background-color:#3399ff;
+    background: linear-gradient(to bottom, #eeeff9 0%,#3399ff 100%);
+}
+.news_box .button_news:hover{
+    background:#268DFF;
+}
+.news_box .button_news_prev {
+    margin-left: 30%;
+}
+.news_box .button_news_more{
+    margin-left: 8rem;
+}
 /*页尾隐藏在页面下方，完全透明显示出来后多高内容 -webkit- -moz- 不同浏览器的布局属性*/
 .box_footer{position:absolute;top:auto;left:0;right:0;bottom:-6rem;z-index:1;height:7rem;opacity:0;background:rgba(0,0,0,0.6);-webkit-transition:all .5s;-moz-transition:all .5s;-o-transition:all .5s;-ms-transition:all .5s;transition:all .5s}
 /*鼠标移动到什么区域可以显示页尾，中间高两边低*/

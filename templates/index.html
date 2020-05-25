@@ -58,6 +58,10 @@
                                     <div class="swiper-slide">news4</div>
                                 </div>
                             </div>
+                            <button type="button" id="prev_news" class="button_news button_news_prev">上一个</button>
+                            <button type="button" id="next_news" class="button_news">下一个</button>
+                            <button type="button" id="news_more" class="button_news button_news_more">
+                                <a href="#">查看更多</a></button>
                         </div>
                     </div>
                     <div class="swiper-slide" data-hash="about">Slide 4</div>
@@ -83,75 +87,12 @@
     </div>
         </div>
     </div>
-
-    <div id="bg_img" class="bg_img active_img">
-<!--        <img id="bg_1" class="active_img" src="../../static/img/bg_1.jpeg" />-->
-<!--        <img id="bg_2" src="../../static/img/bg_2.jpeg" />-->
-<!--        <img id="bg_3" src="../../static/img/bg_3.jpeg" />-->
-<!--        <img id="bg_4" src="../../static/img/bg_4.jpeg" />-->
-    </div>
+    <div id="bg_img" class="bg_img active_img"></div>
     <!-- Swiper JS -->
-    <script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
-    <!-- Initialize Swiper -->
-    <script>
-    // 整体swiper切换
-    var mySwiper = new Swiper('.swiper-container', {
-        direction: 'vertical',
-        mousewheel: true,
-        hashNavigation:true,
-        //pagination: {
-        //  el: '.swiper-pagination',
-        //  clickable: true,
+    <script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/swiper-nav-page.js' %}"></script>
 
-        //},
-    });
-
-    // 导航条切换swiper页面
-    $('#index_head,#index_right').click(function(){
-        mySwiper.slideTo(0, 1000, true);
-    })
-    $('#game_head,#game_right').click(function(){
-        mySwiper.slideTo(1, 1000, true);
-    })
-    $('#news_head,#news_right').click(function(){
-        mySwiper.slideTo(2, 1000, true);
-    })
-    $('#about_head,#about_right').click(function(){
-        mySwiper.slideTo(3, 1000, true);
-    })
-
-    // 新闻页面轮播
-    var newsSwiper = new Swiper('.swiper-news', {
-        autoplay: true,
-        direction: 'horizontal'
-    })
-
-    // 导航追踪
-    window.onhashchange=function(event){
-        if(window.location.hash=="#index"){
-            $("#index_head,#index_right").addClass("active")
-            $(".bg_img").css("background","url(../../static/img/bg_1.jpeg")
-            $("#game_head,#game_right,#news_head,#news_right,#about_head,#about_right").removeClass("active")
-        }else if(window.location.hash=="#game"){
-            $("#game_head,#game_right").addClass("active")
-            $(".bg_img").css("background","url(../../static/img/bg_2.jpeg")
-            $("#index_head,#index_right,#news_head,#news_right,#about_head,#about_right").removeClass("active")
-        }else if(window.location.hash=="#news"){
-            $("#news_head,#news_right").addClass("active")
-            $(".bg_img").css("background","url(../../static/img/bg_3.jpeg")
-            $("#game_head,#game_right,#index_head,#index_right,#about_head,#about_right").removeClass("active")
-        }else{
-            $("#about_head,#about_right").addClass("active")
-            $(".bg_img").css("background","url(../../static/img/bg_4.jpeg")
-            $("#game_head,#game_right,#news_head,#news_right,#index_head,#index_right").removeClass("active")
-        };
-    }
-
-    // 背景图片切换
-
-
-    </script>
 </body>
 </html>
