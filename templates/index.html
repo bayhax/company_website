@@ -39,6 +39,7 @@
             </ul>
     </div>
 
+
     <!--最外层body很重要，对footer的绝对定位有重要作用，不然footer没有参考-->
     <div id="body_con" class="body_con">
         <!--网页主题内容-->
@@ -52,10 +53,26 @@
                         <div class="news_box">
                             <div class="swiper-news">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide">news1</div>
-                                    <div class="swiper-slide">news2</div>
-                                    <div class="swiper-slide">news3</div>
-                                    <div class="swiper-slide">news4</div>
+                                    <div class="swiper-slide">
+                                        <a href="/news/news_content?news_id=1" target="_blank">
+                                            <img class="news_img swiper-lazy"  id="news_1" src="{% static 'img/news/news_1.jpeg' %}" alt="news_1"></a>
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="/news/news_content?news_id=2" target="_blank">
+                                            <img class="news_img swiper-lazy" id="news_2" src="{% static 'img/news/news_2.jpg' %}" alt="news_2"></a>
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="/news/news_content?news_id=3" target="_blank">
+                                            <img class="news_img swiper-lazy" id="news_3" src="{% static 'img/news/news_3.jpeg' %}" alt="news_3"></a>
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="/news/news_content?news_id=4" target="_blank">
+                                            <img class="news_img swiper-lazy" id="news_4" src="{% static 'img/news/news_4.jpg' %}" alt="news_4"></a>
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
                                 </div>
                             </div>
                             <button type="button" id="prev_news" class="button_news button_news_prev">上一个</button>
@@ -93,6 +110,6 @@
     <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/swiper-nav-page.js' %}"></script>
-
+    <script type="text/javascript" src="{% static 'js/news_slide.js' %}"></script>
 </body>
 </html>

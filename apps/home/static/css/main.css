@@ -134,10 +134,12 @@ html,body{height:100%;}
     width: 100%;
 }
 .swiper-news {
-    width: 40%;
+    width: 50%;
     height: 80%;
     margin-left: auto;
     margin-right: auto;
+    --swiper-theme-color: #ff6600;
+    --swiper-preloader-color: #00ff33;
 }
 // 自定义分页器样式
 .news_box button {
@@ -172,6 +174,12 @@ html,body{height:100%;}
 }
 .news_box .button_news_more{
     margin-left: 8rem;
+}
+.news_img {
+    cursor: pointer;
+    border: 20px solid #aeaed4;
+    width: 32rem;
+    height: 20rem;
 }
 /*页尾隐藏在页面下方，完全透明显示出来后多高内容 -webkit- -moz- 不同浏览器的布局属性*/
 .box_footer{position:absolute;top:auto;left:0;right:0;bottom:-6rem;z-index:1;height:7rem;opacity:0;background:rgba(0,0,0,0.6);-webkit-transition:all .5s;-moz-transition:all .5s;-o-transition:all .5s;-ms-transition:all .5s;transition:all .5s}

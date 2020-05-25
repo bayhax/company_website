@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 {% load static %}
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -21,48 +21,54 @@
 <body>
 	<!-- 网页顶部导航块 -->
 	{% block header_con %}
-	<div class="header">
-        <div class="logo"><img src="{% static 'img/baymax.jpg' %}" alt="logo" height="83px"></div>
-        <div class="title_link">
-			<ul>
-				<li class="li"><a href="/home/index">首页</a></li>
-				<li class="li"><a href="/game/game">游戏</a></li>
-				<li class="li"><a href="/news/news">行业资讯</a></li>
-				<li class="li"><a href="/about/about">关于我们</a></li>
-        	</ul>
-		</div>
-	</div>
+	<!--网页顶部导航块-->
+    <div class="head_nav">
+            <div class="logo"><img src="{% static 'img/baymax.jpg' %}" alt="logo" height="83rem"></div>
+            <div class="title_link">
+                <ul>
+                    <li class="li"><a href="/home/index#index" class="active" id="index_head"></a></li>
+                    <li class="li"><a href="/home/index#game" id="game_head"></a></li>
+                    <li class="li"><a href="/home/index#news" id="news_head"></a></li>
+                    <li class="li"><a href="/home/index#about" id="about_head"></a></li>
+                </ul>
+            </div>
+        </div>
 	{% endblock header_con %}
 
 	<!-- 网页右边导航块 -->
 	{% block right_con %}
-	<div class="right_con">
-			<ul>
-				<li class="li"><a href="/home/index">1</a></li>
-				<li class="li"><a href="/game/game">2</a></li>
-				<li class="li"><a href="/news/news">3</a></li>
-				<li class="li"><a href="/about/about">4</a></li>
-        	</ul>
+	<div class="right_nav">
+            <ul>
+                <li class="li"><a href="/home/index#index" id="index_right"></a></li>
+                <li class="li"><a href="/home/index#game" id="game_right"></a></li>
+                <li class="li"><a href="/home/index#news" id="news_right"></a></li>
+                <li class="li"><a href="/home/index#about" id="about_right"></a></li>
+            </ul>
     </div>
 	{% endblock right_con %}
 
 	<!-- 网页面主题内容块 -->
 	{% block body %}
-	<div class="body"></div>
-	{% endblock body%}
+	<div class="body_con">
+		<div class="body_container" id="body_container">
+			<div id="box_footer" class="box_footer">
+        <footer id="footer" class="footer">
+            <div class="box">
+                <div class="content">
+                    <p>
+                        <a href="#" target="_blank">家长监护工程</a><span>|</span>
+                        <a href="#" target="_blank">纠纷处理</a>
+                    </p>
+                    <p><span>网络文化经营许可证： 京网文[2019]3669-352京ICP证: 京B2-20191828</span></p>
+                    <p><span>京ICP备 19009550号 ©2019-2020 北京第零世界科技有限公司 版权所有</span></p>
 
-	<div class="footer">
-		<div class="foot_link">
-			<a href="#">家长监护工程</a>
-			<span>|</span>
-			<a href="#">纠纷处理</a>
+                </div>
+            </div>
+        </footer>
+    </div>
 		</div>
-		<p>网络文化经营许可证： 京网文[2019]3669-352京ICP证: 京B2-20191828</p>
-		<p>京ICP备 19009550号 ©2019-2020 北京第零世界科技有限公司 版权所有</p>
 	</div>
-	<!-- 网页底部html元素块 -->
-	{% block bottom %}{% endblock bottom%}
-	<!-- 网页底部页面文件块 -->
-	{% block bottomfiles %}{% endblock bottomfiles%}
+	{% endblock body %}
+
 </body>
 </html>

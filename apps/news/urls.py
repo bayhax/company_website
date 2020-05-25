@@ -4,5 +4,6 @@
 from django.urls import path
 from apps.news import views
 urlpatterns = [
-    path('news', views.NewsView.as_view())
+    path('news_content', views.NewsView.as_view()),
+    path('news_control', views.NewsControlView.as_view())
 ]

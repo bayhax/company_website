@@ -31,7 +31,9 @@ var newsSwiper = new Swiper('.swiper-news', {
         disableOnInteraction: false,
     },
     direction: 'horizontal',
-
+    lazy: {
+        loadPrevNext: true,
+    },
 });
 // 前一个/后一个新闻资讯切换
 $("#prev_news").click(function(){

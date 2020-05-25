@@ -1,10 +1,111 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="zh-CN">-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>fullPage.js — 基本演示_dowebok</title>-->
+<!--<link rel="stylesheet" href="https://cdn.dowebok.com/77/css/jquery.fullPage.css">-->
+<!--<style>-->
+<!--.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}-->
+<!--</style>-->
+<!--<script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>-->
+<!--<script src="https://cdn.dowebok.com/77/js/jquery.fullPage.min.js"></script>-->
+<!--<script>-->
+<!--$(function(){-->
+<!--	$('#dowebok').fullpage({-->
+<!--		sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90']-->
+<!--	});-->
+<!--});-->
+<!--</script>-->
+<!--</head>-->
+
+<!--<body>-->
+
+<!--<div id="dowebok">-->
+<!--	<div class="section">-->
+<!--		<h3>第一屏</h3>-->
+<!--		<p>fullPage.js — 基本演示</p>-->
+<!--	</div>-->
+<!--	<div class="section">-->
+<!--		<div class="slide"><h3>第二屏的第一屏</h3></div>-->
+<!--		<div class="slide"><h3>第二屏的第二屏</h3></div>-->
+<!--		<div class="slide"><h3>第二屏的第三屏</h3></div>-->
+<!--	</div>-->
+<!--	<div class="section">-->
+<!--		<h3>第三屏</h3>-->
+<!--	</div>-->
+<!--	<div class="section">-->
+<!--		<h3>第四屏</h3>-->
+<!--		<p>这是最后一屏</p>-->
+<!--	</div>-->
+<!--</div>-->
+
+<!--<a href="https://www.dowebok.com/" style="display: none;">dowebok</a>-->
+<!--<a href="https://www.dowebok.com/77.html" style="display: none;">jQuery全屏滚动插件fullPage.js</a>-->
+<!--<div style="display:none">-->
+<!--<script src="https://s5.cnzz.com/z_stat.php?id=1253231826&web_id=1253231826"></script>-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+        <link rel="stylesheet" href="css/swiper.min.css">
+    </head>
+
+    <body>
+        <div class="swiper-container" id="swiperContainer">
+            <div class="swiper-wrapper">
+                <!-------------slide1----------------->
+                <section class="swiper-slide" style="background:pink;">
+                    1
+                </section>
+                 <!---------------slide2-------------->
+                <section class="swiper-slide" style="background:yellow;">
+                    2
+                </section>
+                 <!----------------slide3-------------->
+                <section class="swiper-slide">
+                    3
+                </section>
+                <!-------------slide4----------------->
+                <section class="swiper-slide">
+                    4
+                </section>
+                <!-------------slide5----------------->
+                <section class="swiper-slide">
+                    5
+                </section>
+                <!-------------slide6----------------->
+                <section class="swiper-slide">
+                    6
+                </section>
+            </div>
+        </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script>
+          var mySwiper = new Swiper ('.swiper-container', {
+            direction : 'vertical',
+            on: {
+                //滑动到最后一个slide触发
+                reachEnd: function(){
+                    console.log('到了最后一个slide');
+                },
+                //判断滑动到了哪一页
+                slideChangeTransitionEnd: function(){
+                    console.log(this.activeIndex);
+                    if(this.activeIndex == 6){
+                        $('#array').css('display','none');
+                    }else{
+                        $('#array').css('display','block');
+                    }
+                }
+            }
+          })
+      </script>
 </body>
 </html>

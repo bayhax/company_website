@@ -19,6 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('tinymce', include('tinymce.urls')),  # 富文本编辑器
     path('home/', include('home.urls')),  # 官网首页
     path('game/', include('game.urls')),  # 游戏介绍
     path('news/', include('news.urls')),  # 行业资讯
