@@ -5,24 +5,20 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- 网页标题内容块 -->
-	<title>{% block title %}{% endblock title %}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-table.css' %}">
+	<title>第零世界科技有限公司</title>
+
 	<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/news_more.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-table.min.css' %}">
 	<link rel="SHORTCUT ICON" type="text/css" href="{% static 'img/favicon.ico' %}">
     <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/bootstrap-table.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/bootstrap-table-zh-CN.js' %}"></script>
-	<!-- 网页顶部引入文件块 -->
-	{% block topfiles %}{% endblock topfiles %}
+
 </head>
 <body>
-	<!-- 网页顶部导航块 -->
-	{% block header_con %}
+
 	<!--网页顶部导航块-->
     <div class="head_nav">
             <div class="logo"><img src="{% static 'img/baymax.jpg' %}" alt="logo" height="83rem"></div>
@@ -35,10 +31,8 @@
                 </ul>
             </div>
         </div>
-	{% endblock header_con %}
 
 	<!-- 网页右边导航块 -->
-	{% block right_con %}
 	<div class="right_nav">
             <ul>
                 <li class="li"><a href="/home/index#index" id="index_right"></a></li>
@@ -47,15 +41,48 @@
                 <li class="li"><a href="/home/index#about" id="about_right"></a></li>
             </ul>
     </div>
-	{% endblock right_con %}
 
 	<!-- 网页面主题内容块 -->
-	{% block body %}
 	<div class="body_con">
 		<div class="body_container" id="body_container">
+            <div class="news_table">
+                {% for news in news_data %}
+                   <a href="/news/news_content?news_id={{ news.news_id }}m"><div class="news_row" id="{{ news.news_id }}">
+                        <span class="news_time">{{ news.news_time }}</span>
+                        <span class="news_title">{{ news.news_title }}</span>
+                        <span class="news_id">{{ news.news_id }}</span>
+                   </div></a>
+                {% endfor %}
+                <div id="pages" class="text-center" >
+                    <nav>
+                    {% if news_data.has_other_pages %}
+                        <ul class="pagination">
+                            {% if news_data.has_previous %}
+                              <li><a href="?page={{ news_data.previous_page_number }}">&laquo;</a></li>
+                            {% else %}
+                              <li class="disabled"><span>&laquo;</span></li>
+                            {% endif %}
+                            {% for i in news_data.paginator.page_range %}
+                              {% if news_data.number == i %}
+                                <li><span>{{ i }} <span class="sr-only"></span></span></li>
+                              {% else %}
+                                <li><a href="?page={{ i }}">{{ i }}</a></li>
+                              {% endif %}
+                            {% endfor %}
+                            {% if news_data.has_next %}
+                              <li><a href="?page={{ news_data.next_page_number }}">&raquo;</a></li>
+                            {% else %}
+                              <li class="disabled"><span>&raquo;</span></li>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
+                    </nav>
+                </div>
+            </div>
+
 			<div id="box_footer" class="box_footer">
-        <footer id="footer" class="footer">
-            <div class="box">
+                <footer id="footer" class="footer">
+                    <div class="box">
                 <div class="content">
                     <p>
                         <a href="#" target="_blank">家长监护工程</a><span>|</span>
@@ -66,12 +93,15 @@
 
                 </div>
             </div>
-        </footer>
-    </div>
-		</div>
+                </footer>
+            </div>
+        </div>
 	</div>
-	{% endblock body %}
-    {% block js %}
-    {% endblock js %}
+
+    <script>
+    $(document).ready(function(){
+
+    })
+</script>
 </body>
 </html>

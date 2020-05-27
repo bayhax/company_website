@@ -48,7 +48,7 @@ window.onhashchange=function(event){
     recognize_url_hash();
 };
 function recognize_url_hash(){
-    if(window.location.hash=="#index"){
+    if(window.location.hash=="#index" || window.location.hash==""){
         $("#index_head,#index_right").addClass("active")
         $(".bg_img").css("background","url(../../static/img/bg_1.jpeg")
         $("#game_head,#game_right,#news_head,#news_right,#about_head,#about_right").removeClass("active")

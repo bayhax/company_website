@@ -11,7 +11,17 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/swiper.min.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css'%}">
-
+    <!--2020.04.04全国抗击疫情哀悼日灰色背景-->
+    <style>
+        .gray{
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+            _filter: none;
+        }
+    </style>
     <!-- Demo styles -->
 </head>
 <body>
@@ -54,22 +64,22 @@
                             <div class="swiper-news">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <a href="/news/news_content?news_id=1" target="_blank">
+                                        <a href="/news/news_content?news_id=0" target="_blank">
                                             <img class="news_img swiper-lazy"  id="news_1" src="{% static 'img/news/news_1.jpeg' %}" alt="news_1"></a>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <a href="/news/news_content?news_id=2" target="_blank">
+                                        <a href="/news/news_content?news_id=1" target="_blank">
                                             <img class="news_img swiper-lazy" id="news_2" src="{% static 'img/news/news_2.jpg' %}" alt="news_2"></a>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <a href="/news/news_content?news_id=3" target="_blank">
+                                        <a href="/news/news_content?news_id=2" target="_blank">
                                             <img class="news_img swiper-lazy" id="news_3" src="{% static 'img/news/news_3.jpeg' %}" alt="news_3"></a>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <a href="/news/news_content?news_id=4" target="_blank">
+                                        <a href="/news/news_content?news_id=3" target="_blank">
                                             <img class="news_img swiper-lazy" id="news_4" src="{% static 'img/news/news_4.jpg' %}" alt="news_4"></a>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
@@ -77,8 +87,8 @@
                             </div>
                             <button type="button" id="prev_news" class="button_news button_news_prev">上一个</button>
                             <button type="button" id="next_news" class="button_news">下一个</button>
-                            <button type="button" id="news_more" class="button_news button_news_more">
-                                <a href="#">查看更多</a></button>
+                            <a href="/news/news_more"><button type="button" id="news_more" class="button_news button_news_more">
+                                查看更多</button></a>
                         </div>
                     </div>
                     <div class="swiper-slide" data-hash="about">Slide 4</div>
@@ -111,5 +121,24 @@
     <script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/swiper-nav-page.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/news_slide.js' %}"></script>
+<!--2020.04.04全国抗击疫情哀悼日灰色-->
+<script>
+    var timestamp2 = (new Date()).valueOf();
+    function format(shijianchuo)
+    {
+        //shijianchuo是整数，否则要parseInt转换
+        var time = new Date(shijianchuo);
+        var y = time.getFullYear();
+        var m = time.getMonth()+1;
+        var d = time.getDate();
+        var h = time.getHours();
+        var mm = time.getMinutes();
+        var s = time.getSeconds();
+        if( d == 4 && m == 4 & y == 2020) {
+            $('body').addClass('gray');
+        }
+    }
+    format(timestamp2);
+</script>
 </body>
 </html>

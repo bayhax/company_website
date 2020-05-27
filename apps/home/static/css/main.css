@@ -146,6 +146,7 @@ html,body{height:100%;}
     display:none;
 }
 .news_box .button_news {
+    cursor: pointer;
     width: 6rem;
     height: 4rem;
     margin:0 2rem;

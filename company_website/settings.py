@@ -135,7 +135,19 @@ STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
 # 富文本编辑器配置
 TINYMCE_DEFAULT_CONFIG = {
     'theme': 'advanced',
-    'width': 600,
-    'height': 400,
+    'width': 800,
+    'height': 1000,
+}
+
+# Django的缓存配置, redis
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "CONNECTION_POOL_KWARGS": {"max_connections": 100},
+        }
+    }
 }
 
