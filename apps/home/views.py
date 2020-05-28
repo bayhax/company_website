@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import View
+
+
 # Create your views here.
 
 
@@ -11,3 +13,11 @@ class IndexView(View):
 
     def post(self, request):
         pass
+
+
+def supervisor(request):
+    return render(request, 'supervisor.html')
+
+
+def dispute(request):
+    return render(request, 'dispute.html')

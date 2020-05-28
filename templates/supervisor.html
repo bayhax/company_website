@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+{% load static %}
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<!-- 网页标题内容块 -->
+	<title>{% block title %}北京第零世界科技有限公司{% endblock title %}</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/supervisor.css' %}">
+	<link rel="SHORTCUT ICON" type="text/css" href="{% static 'img/favicon.ico' %}">
+    <!-- 引用外部资源 -->
+    {% block outlink %}
+
+    {% endblock outlink %}
+</head>
+<body>
+
+	<!--网页顶部导航块-->
+    <div class="head_nav">
+            <div class="logo"><img src="{% static 'img/baymax.jpg' %}" alt="logo" height="83rem"></div>
+            <div class="title_link">
+                <ul>
+                    <li class="li"><a href="/home/index#index" class="active" id="index_head"></a></li>
+                    <li class="li"><a href="/home/index#game" id="game_head"></a></li>
+                    <li class="li"><a href="/home/index#news" id="news_head"></a></li>
+                    <li class="li"><a href="/home/index#about" id="about_head"></a></li>
+                </ul>
+            </div>
+        </div>
+
+	<!-- 网页面主题内容块 -->
+	<div class="supervisor">
+        {% block body %}
+        <div class="supervisor_title">网络游戏未成年人家长监护工程</div>
+        <HR size="5">
+        <div class="project_brief" title="工程介绍"></div>
+        <div class="process_brief" title="流程介绍"></div>
+        <div class="apply">
+            <div class="contact_way">
+                <div class="apply_condition" title="申请条件"></div>
+                <div class="need_condition" title="所需条件"></div>
+                <div class="address" title="邮寄传真方式"></div>
+                <div class="other" title="其他"></div>
+            </div>
+            <div class="question">
+                <div class="consultation" title="咨询方式"></div>
+                <div class="ques" title="常见问题">
+                    <ul>
+                        <li>通过哪些渠道可以获得咨询
+                            <span>人生就像一盒巧克力，你永远不知道下一颗是什么味道</span>
+                        </li>
+                        <li>家长申请监护的服务需要收费吗
+                            <span>午后，阴云沉沉，四下暗淡。</span>
+                        </li>
+                        <li>申请被监护的账号有什么要求
+                            <span>人生就像一盒巧克力，你永远不知道下一颗是什么味道
+                            人生就像一盒巧克力，你永远不知道下一颗是什么味道
+                            人生就像一盒巧克力，你永远不知道下一颗是什么味道
+                            人生就像一盒巧克力，你永远不知道下一颗是什么味道
+                            </span>
+                        </li>
+                        <li>恣意
+                            <span>东风快递</span>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endblock body %}
+        <footer id="footer" class="footer">
+            <div class="box">
+                <div class="content">
+                    <p>
+                        <a href="/home/supervisor" target="_blank">家长监护工程</a><span>|</span>
+                        <a href="/home/dispute" target="_blank">纠纷处理</a>
+                    </p>
+                    <p><span>网络文化经营许可证： 京网文[2019]3669-352京ICP证: 京B2-20191828</span></p>
+                    <p><span>京ICP备 19009550号 ©2019-2020 北京第零世界科技有限公司 版权所有</span></p>
+
+                </div>
+            </div>
+        </footer>
+	</div>
+
+</body>
+</html>

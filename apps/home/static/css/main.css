@@ -1,3 +1,4 @@
+
 body{font-family:'Microsoft Yahei';font-size:14px;color:#666;
 }
 html,body{height:100%;}
@@ -10,6 +11,8 @@ html,body{height:100%;}
     width:100%;
     opacity:0;
     background:url(../img/bg_1.jpeg);
+    -webkit-transition: all 1s linear;
+    -o-transition: all 1s linear;
     transition: all 1s linear;
 }
 .active_img {
@@ -38,20 +41,40 @@ html,body{height:100%;}
     height: 100%;
     width: 60%;
     float: right;
-    margin-right: 5%;
 }
+
 .title_link ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     list-style:none;
     height: 100%;
-    width: 100%;
+    width: 90%;
+    transition: all 0.8s ease-in-out;
 }
+.hide_title{
+    cursor: pointer;
+    position: absolute;
+    width: 8%;
+    height: 8%;
+    margin: 12px 1%;
+    top: 0;
+    right: 1%;
+}
+
 .title_link ul li{
     display: inline-block;
     width: 20%;
     text-align: center;
+    -webkit-transition: 0.2s all liner;
+    -o-transition: 0.2s all liner;
     transition: 0.2s all liner;
     cursor: pointer;
 }
@@ -77,9 +100,16 @@ html,body{height:100%;}
     float: right;
 }
 .right_nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     list-style:none;
     height: 100%;
     width: 100%;
@@ -117,15 +147,12 @@ html,body{height:100%;}
     /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    -webkit-justify-content: center;
     justify-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    -webkit-align-items: center;
     align-items: center;
 }
 .news_box {
@@ -134,7 +161,7 @@ html,body{height:100%;}
     width: 100%;
 }
 .swiper-news {
-    width: 50%;
+    width: 700px;
     height: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -156,7 +183,8 @@ html,body{height:100%;}
     padding:0.3em;
     border: 0px;
     border-radius:30px;
-    box-shadow:0px 1px 2px rgba(0,0,0,0.2);
+    -webkit-box-shadow:0px 1px 2px rgba(0,0,0,0.2);
+            box-shadow:0px 1px 2px rgba(0,0,0,0.2);
     text-shadow:0px 1px 1px rgba(0,0,0,0.3);
     color:#fefee9;
     border:0.2px solid #2299ff;
@@ -165,6 +193,8 @@ html,body{height:100%;}
     background-origin:padding-box;
     background-clip:padding-box;
     background-color:#3399ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#eeeff9),to(#3399ff));
+    background: -o-linear-gradient(top, #eeeff9 0%,#3399ff 100%);
     background: linear-gradient(to bottom, #eeeff9 0%,#3399ff 100%);
 }
 .news_box .button_news:hover{
@@ -178,16 +208,16 @@ html,body{height:100%;}
 }
 .news_img {
     cursor: pointer;
-    border: 20px solid #aeaed4;
-    width: 32rem;
+    border: 2rem solid #aeaed4;
+    width: 40rem;
     height: 20rem;
 }
 /*页尾隐藏在页面下方，完全透明显示出来后多高内容 -webkit- -moz- 不同浏览器的布局属性*/
-.box_footer{position:absolute;top:auto;left:0;right:0;bottom:-6rem;z-index:1;height:7rem;opacity:0;background:rgba(0,0,0,0.6);-webkit-transition:all .5s;-moz-transition:all .5s;-o-transition:all .5s;-ms-transition:all .5s;transition:all .5s}
+.box_footer{position:absolute;top:auto;left:0;right:0;bottom:-6rem;z-index:1;height:7rem;opacity:0;background:rgba(0,0,0,0.6);-webkit-transition:all .5s;-o-transition:all .5s;transition:all .5s}
 /*鼠标移动到什么区域可以显示页尾，中间高两边低*/
 .box_footer:before{content:'';display:block;position:absolute;top:auto;left:0;right:0;bottom:0;z-index:0;width:20rem;height:130%;margin:0 auto}
 /*鼠标移动到该区域，显示出来，y轴向上移动页面下方的距离，从下向上滑入的效果*/
-.box_footer:hover{opacity:0.6;-webkit-transform:translateY(-2rem);-moz-transform:translateY(-2rem);-o-transform:translateY(-2rem);-ms-transform:translateY(-2rem);transform:translateY(-6rem)}
+.box_footer:hover{opacity:0.6;-webkit-transform:translateY(-2rem);-ms-transform:translateY(-2rem);transform:translateY(-6rem)}
 /*显示出来后footer的大小*/
 .box_footer .footer{height:6rem}
 .footer {
@@ -227,7 +257,6 @@ html,body{height:100%;}
     height: 100%;
     padding: 0.2rem 0;
     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -277,26 +306,36 @@ html,body{height:100%;}
 .footer .box .content p > span {
     padding: 0 0.05rem;
 }
-
+.about_box {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
 .about_us {
     display: inline-block;
     height:50%;
+    width: 80%;
+    margin-left: 10%;
     margin-top: 5%;
-    margin-left:5%;
+    text-align: left;
 }
 .about_us p{
     font-size:15px;
     margin:10px;
-    text-indent:2rem;
+    text-indent:1rem;
+    text-align: left;
 }
 .contact_us {
     display: inline-block;
     height: 50%;
-    margin-left: 5%;
+    width: 80%;
+    margin-left: 10%;
+    text-align:left;
 }
 .contact_us p {
     font-size:15px;
     margin: 10px;
+    text-align: left;
     text-indent: 2rem;
 }
 .news_graphic {
@@ -318,9 +357,16 @@ html,body{height:100%;}
     width: 70%;
 }
 .news_change .pre_next ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     list-style:none;
     height: 100%;
     width: 100%;
@@ -344,9 +390,16 @@ html,body{height:100%;}
     float: right;
 }
 .news_change .more ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     list-style:none;
     height: 100%;
     width: 100%;

@@ -29,9 +29,16 @@
     width: 15%;
 }
 .news_table ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     list-style:none;
     list-style:none;
     margin:10px 40%;
@@ -40,6 +47,13 @@
     display: inline-block;
     width: 20%;
     text-align: center;
+    -webkit-transition: 0.2s all liner;
+    -o-transition: 0.2s all liner;
     transition: 0.2s all liner;
     cursor: pointer;
+}
+#pages ul li a{
+    display: inline-block;
+    margin: 0 10%;
+    width:80%;
 }

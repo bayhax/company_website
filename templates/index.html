@@ -28,7 +28,7 @@
 
     <!--网页顶部导航块-->
     <div class="head_nav">
-            <div class="logo"><img src="{% static 'img/baymax.jpg' %}" alt="logo" height="83rem"></div>
+            <div class="logo"><img src="{% static 'img/baymax.jpg' %}" alt="logo" height="100%"></div>
             <div class="title_link">
                 <ul>
                     <li class="li"><a href="/home/index#index" class="active" id="index_head">首页</a></li>
@@ -36,8 +36,10 @@
                     <li class="li"><a href="/home/index#news" id="news_head">行业资讯</a></li>
                     <li class="li"><a href="/home/index#about" id="about_head">关于我们</a></li>
                 </ul>
+                <div class="hide_title"><img src="{% static 'img/baymax.jpg' %}" height="100%"></div>
             </div>
         </div>
+
 
     <!--网页右边导航块-->
     <div class="right_nav">
@@ -91,7 +93,19 @@
                                 查看更多</button></a>
                         </div>
                     </div>
-                    <div class="swiper-slide" data-hash="about">Slide 4</div>
+                    <div class="swiper-slide" data-hash="about">
+                        <div class="about_box">
+                        <div class="about_us">
+                        <h2 style="font-size:30px; text-align:center;">关于我们</h2>
+                            <p>北京第零世界科技有限公司成立于2018年1月，企业围绕"诚信透明、主动担当、工匠精神、活力进取"四大文化，致力于精品游戏研发。</p>
+                        </div>
+                        <div class="contact_us">
+                            <h2 style="font-size:30px;text-align:center">联系我们</h2>
+                            <p>地址： 北京市朝阳区建国路15号院甲1号北岸1292三间房创意生活园区9-7291</p>
+                            <p>邮箱：</p>
+                        </div>
+                            </div>
+                    </div>
                 </div>
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
@@ -102,8 +116,8 @@
             <div class="box">
                 <div class="content">
                     <p>
-                        <a href="#" target="_blank">家长监护工程</a><span>|</span>
-                        <a href="#" target="_blank">纠纷处理</a>
+                        <a href="/home/supervisor" target="_blank">家长监护工程</a><span>|</span>
+                        <a href="/home/dispute" target="_blank">纠纷处理</a>
                     </p>
                     <p><span>网络文化经营许可证： 京网文[2019]3669-352京ICP证: 京B2-20191828</span></p>
                     <p><span>京ICP备 19009550号 ©2019-2020 北京第零世界科技有限公司 版权所有</span></p>
@@ -121,24 +135,7 @@
     <script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/swiper-nav-page.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/news_slide.js' %}"></script>
-<!--2020.04.04全国抗击疫情哀悼日灰色-->
-<script>
-    var timestamp2 = (new Date()).valueOf();
-    function format(shijianchuo)
-    {
-        //shijianchuo是整数，否则要parseInt转换
-        var time = new Date(shijianchuo);
-        var y = time.getFullYear();
-        var m = time.getMonth()+1;
-        var d = time.getDate();
-        var h = time.getHours();
-        var mm = time.getMinutes();
-        var s = time.getSeconds();
-        if( d == 4 && m == 4 & y == 2020) {
-            $('body').addClass('gray');
-        }
-    }
-    format(timestamp2);
-</script>
+    <script type="text/javascript" src="{% static 'js/public.js' %}"></script>
+
 </body>
 </html>
