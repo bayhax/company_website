@@ -206,11 +206,28 @@ html,body{height:100%;}
 .news_box .button_news_more{
     margin-left: 8rem;
 }
-.news_img {
+/*.news_img {
     cursor: pointer;
     border: 2rem solid #aeaed4;
     width: 40rem;
     height: 20rem;
+    transition: all 1s ease-in-out;
+}*/
+.news_img {
+    display:block;
+    height: 100%;
+    width: 100%;
+    transition: all 1s ease-in-out;
+}
+.img_box {
+    cursor: pointer;
+    border: 2rem solid #aeaed4;
+    width: 40rem;
+    height: 20rem;
+    overflow: hidden;
+}
+.news_img:hover{
+    transform:scale(1.2);
 }
 /*页尾隐藏在页面下方，完全透明显示出来后多高内容 -webkit- -moz- 不同浏览器的布局属性*/
 .box_footer{position:absolute;top:auto;left:0;right:0;bottom:-6rem;z-index:1;height:7rem;opacity:0;background:rgba(0,0,0,0.6);-webkit-transition:all .5s;-o-transition:all .5s;transition:all .5s}

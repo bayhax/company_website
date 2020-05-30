@@ -1,14 +1,14 @@
+from datetime import timedelta
+
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import View
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage, InvalidPage
+from django_redis import get_redis_connection
 
+from news.models import News
 from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
-
-from datetime import timedelta
-from news.models import News
-from django_redis import get_redis_connection
 
 
 # Create your views here.

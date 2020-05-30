@@ -29,7 +29,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definitionpi
 # 注册应用
 INSTALLED_APPS = [
@@ -76,7 +75,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'company_website.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -90,7 +88,6 @@ DATABASES = {
         'PORT': 3306,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -110,7 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -124,19 +120,32 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
 STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
+
 # 指定收集静态文件的路径
 # STATIC_ROOT = '/home/static'
+# ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+
 # 富文本编辑器配置
 TINYMCE_DEFAULT_CONFIG = {
-    'theme': 'advanced',
+    'selector': 'textarea',
+    'language': 'zh_CN',
+    'theme': 'modern',
+    'plugins': 'print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link '
+               'media template code codesample table charmap hr pagebreak nonbreaking anchor insertdatetime advlist '
+               'lists wordcount imagetools textpattern help emoticons autosave autoresize textcolor',
+    'toolbar': 'fontselect fontsizeselect forecolor backcolor | image undo redo restoredraft | cut copy paste '
+               'pastetext | outdent indent bullist numlist | blockquote subscript superscript removeformat | charmap '
+               'emoticons hr pagebreak insertdatetime print preview | code fullscreen',
+    'images_upload_url': '/home/upload_image',
+    'images_reuse_filename': 'true',
     'width': 800,
     'height': 1000,
+
 }
 
 # Django的缓存配置, redis
