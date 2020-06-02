@@ -206,13 +206,6 @@ html,body{height:100%;}
 .news_box .button_news_more{
     margin-left: 8rem;
 }
-/*.news_img {
-    cursor: pointer;
-    border: 2rem solid #aeaed4;
-    width: 40rem;
-    height: 20rem;
-    transition: all 1s ease-in-out;
-}*/
 .news_img {
     display:block;
     height: 100%;
