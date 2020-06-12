@@ -36,19 +36,21 @@
                     <li class="li"><a href="/home/index#news" id="news_head">行业资讯</a></li>
                     <li class="li"><a href="/home/index#about" id="about_head">关于我们</a></li>
                 </ul>
-                <div class="hide_title"><img src="{% static 'img/baymax.jpg' %}" height="100%"></div>
+                <div class="hide_title"><img src="{% static 'img/baymax.jpg' %}" height="60%"></div>
             </div>
         </div>
 
 
     <!--网页右边导航块-->
     <div class="right_nav">
+            <div style="width:100%"><img src="{% static 'img/up.png'%}" style="margin:10% 0 0 65%;"></div>
             <ul>
-                <li class="li"><a href="/home/index#index" class="active" id="index_right">1</a></li>
-                <li class="li"><a href="/home/index#game" id="game_right">2</a></li>
-                <li class="li"><a href="/home/index#news" id="news_right">3</a></li>
-                <li class="li"><a href="/home/index#about" id="about_right">4</a></li>
+                <li class="li"><a href="/home/index#index" id="index_right"></a><hr id="index_hr" class="right_hr"></li>
+                <li class="li"><a href="/home/index#game" id="game_right"></a><hr id="game_hr" class="right_hr"></li>
+                <li class="li"><a href="/home/index#news" id="news_right"></a><hr id="news_hr" class="right_hr"></li>
+                <li class="li"><a href="/home/index#about" id="about_right"></a><hr id="about_hr" class="right_hr"></li>
             </ul>
+            <div style="width:100%"><img src="{% static 'img/down.png'%}" style="margin:0 0 0 65%;"></div>
     </div>
 
 
@@ -133,6 +135,7 @@
         </footer>
     </div>
         </div>
+        <div style="position:absolute;bottom:0;left:50%;"><img src="{% static 'img/PageDown.png'%}"></div>
     </div>
     <div id="bg_img" class="bg_img active_img"></div>
     <!-- Swiper JS -->

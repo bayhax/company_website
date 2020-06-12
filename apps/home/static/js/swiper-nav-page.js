@@ -47,22 +47,42 @@ recognize_url_hash();
 window.onhashchange=function(event){
     recognize_url_hash();
 };
+function changeStyle(add, remove, style_class){
+    $(add).addClass(style_class)
+    $(remove).removeClass(style_class)
+}
+function changeCss(add, change, style_css){
+    $(add).css("margin-left","10%")
+    $(change).css("margin-left","60%")
+}
 function recognize_url_hash(){
     if(window.location.hash=="#index" || window.location.hash==""){
-        $("#index_head,#index_right").addClass("active")
-        $(".bg_img").css("background","url(../../static/img/bg_1.jpeg")
-        $("#game_head,#game_right,#news_head,#news_right,#about_head,#about_right").removeClass("active")
+        changeStyle("#index_head", "#game_head,#news_head,#about_head", "active")
+        changeStyle("#index_right", "#game_right,#news_right,#about_right", "right_icon")
+        changeCss("#index_hr","#game_hr,#news_hr,#about_hr")
+        $(".bg_img").css("background","url(../../static/img/bg_1.png")
+        $("#index_right").html('<span>首页</span>')
+        $("#game_right, #news_right, #about_right").html("")
     }else if(window.location.hash=="#game"){
-        $("#game_head,#game_right").addClass("active")
+        changeStyle("#game_head", "#index_head,#news_head,#about_head", "active")
+        changeStyle("#game_right", "#index_right,#news_right,#about_right", "right_icon")
+        changeCss("#game_hr","#index_hr,#news_hr,#about_hr")
         $(".bg_img").css("background","url(../../static/img/bg_2.jpeg")
-        $("#index_head,#index_right,#news_head,#news_right,#about_head,#about_right").removeClass("active")
+        $("#game_right").html('<span>游戏</span>')
+        $("#index_right, #news_right, #about_right").html("")
     }else if(window.location.hash=="#news"){
-        $("#news_head,#news_right").addClass("active")
+        changeStyle("#news_head", "#index_head,#game_head,#about_head", "active")
+        changeStyle("#news_right", "#index_right,#game_right,#about_right", "right_icon")
+        changeCss("#news_hr","#index_hr,#game_hr,#about_hr")
         $(".bg_img").css("background","url(../../static/img/bg_3.jpeg")
-        $("#game_head,#game_right,#index_head,#index_right,#about_head,#about_right").removeClass("active")
+        $("#news_right").html('<span style="margin-left:1.2rem;">行业资讯</span>')
+        $("#game_right, #index_right, #about_right").html("")
     }else{
-        $("#about_head,#about_right").addClass("active")
+        changeStyle("#about_head", "#index_head,#game_head,#news_head", "active")
+        changeStyle("#about_right", "#index_right,#game_right,#news_right", "right_icon")
+        changeCss("#about_hr","#index_hr,#game_hr,#news_hr")
         $(".bg_img").css("background","url(../../static/img/bg_4.jpeg")
-        $("#game_head,#game_right,#news_head,#news_right,#index_head,#index_right").removeClass("active")
+        $("#about_right").html('<span style="margin-left:1.2rem;">关于我们</span>')
+        $("#game_right, #news_right, #index_right").html("")
     };
 };

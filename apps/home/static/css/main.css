@@ -1,22 +1,21 @@
-
-body{font-family:'Microsoft Yahei';font-size:14px;color:#666;
-}
+body{font-family:'Microsoft Yahei';font-size:14px;color:#666;}
 html,body{height:100%;}
 .bg_img{
     pointer-events:none;
     position:fixed;
-    z-index:2;
+    z-index:-1;
     top:0;left:0;height:0;bottom:0;
     height:100%;
     width:100%;
     opacity:0;
-    background:url(../img/bg_1.jpeg);
+    background:url(../img/bg_1.png);
     -webkit-transition: all 1s linear;
     -o-transition: all 1s linear;
     transition: all 1s linear;
 }
+
 .active_img {
-    opacity:0.2;
+    opacity:1;
 }
 .head_nav {
     height: 10%;
@@ -32,14 +31,14 @@ html,body{height:100%;}
     display: inline-block;
     padding-left: 5%;
     height: 100%;
-    width: 10%;
+    width: 10rem;
 }
 .title_link {
-    font-size:20px;
+    font-size:1.2rem;
     text-align: center;
     display: inline-block;
     height: 100%;
-    width: 60%;
+    width: 30rem;
     float: right;
 }
 
@@ -56,22 +55,22 @@ html,body{height:100%;}
             justify-content: center;
     list-style:none;
     height: 100%;
-    width: 90%;
+    width: 25rem;
     transition: all 0.8s ease-in-out;
 }
 .hide_title{
     cursor: pointer;
     position: absolute;
-    width: 8%;
-    height: 8%;
-    margin: 12px 1%;
+    width: 3rem;
+    height: 4rem;
+    margin: 1.6rem 1rem;
     top: 0;
     right: 1%;
 }
 
 .title_link ul li{
     display: inline-block;
-    width: 20%;
+    width: 8rem;
     text-align: center;
     -webkit-transition: 0.2s all liner;
     -o-transition: 0.2s all liner;
@@ -91,15 +90,29 @@ html,body{height:100%;}
 .active {
     border-bottom: 2px solid red;
 }
+.active_right {
+    content: '<hr />';
+}
+.right_hr {
+    display: inline-block;
+    width: 100%;
+    margin-left: 60%;
+    transition: 0.8s all ease-in-out;
+}
 
+.right_icon {
+    opacity:1;
+    transition: 1s opacity ease-in-out;
+    background: no-repeat 0 0 url(../img/triangle.png);
+}
 .right_nav {
-    font-size: 20px;
-    background: #42ad46;
+    font-size: 0.7rem;
     width: 10%;
     height: 90%;
     float: right;
 }
 .right_nav ul {
+    background: no-repeat 75% url(../img/right.png);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -111,25 +124,21 @@ html,body{height:100%;}
         -ms-flex-pack: center;
             justify-content: center;
     list-style:none;
-    height: 100%;
+    height: 40%;
     width: 100%;
 }
 .right_nav ul li{
     display: inline-block;
     height: 20%;
-    width: 100%;
+    width: 77%;
+    overflow: hidden;
 
 }
 .right_nav ul li a{
     display: inline-block;
-    height: 60%;
-    width: 60%;
-    margin-left: 20%;
-    line-height: 5rem;
+    width: 80%;
+    margin-left: 10%;
     text-align: center;
-}
-.right_nav ul li a:hover {
-    border-bottom: 2px solid red;
 }
 
 .swiper-container {
@@ -140,10 +149,11 @@ html,body{height:100%;}
 }
 
 .swiper-slide {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0);
     overflow: hidden;
     text-align: center;
     font-size: 18px;
-    background: #fff;
     /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
@@ -156,13 +166,14 @@ html,body{height:100%;}
     align-items: center;
 }
 .news_box {
+    opacity: 1;
     display: block;
     height: 100%;
     width: 100%;
 }
 .swiper-news {
-    width: 700px;
-    height: 80%;
+    width: 40rem;
+    height: 35rem;
     margin-left: auto;
     margin-right: auto;
     --swiper-theme-color: #ff6600;
@@ -177,6 +188,7 @@ html,body{height:100%;}
     width: 6rem;
     height: 4rem;
     margin:0 2rem;
+    margin-top: -2rem;
     outline: none;
     text-align:center;
     line-height:100%;

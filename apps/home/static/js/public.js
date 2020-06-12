@@ -18,8 +18,8 @@ format(timestamp2);
 // 顶部导航栏隐藏
 $(".hide_title").click(function(){
     if($(".title_link ul").css('width') != '0px'){
-        $(".title_link ul").css({'margin-left':'90%','width':'0','opacity':'0','overflow':'hidden'})
+        $(".title_link ul").css({'margin-left':'25rem','width':'0','opacity':'0','overflow':'hidden'})
     }else{
-        $(".title_link ul").css({'margin-left':'0','width':'90%','opacity':'1','overflow':'hidden'})
+        $(".title_link ul").css({'margin-left':'0','width':'25rem','opacity':'1','overflow':'hidden'})
     }
 })
