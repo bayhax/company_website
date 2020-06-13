@@ -1,9 +1,18 @@
- // 整体swiper切换
+
+// 整体swiper切换
 var mySwiper = new Swiper('.swiper-container', {
     lazy: true,
+    speed: 800,
     direction: 'vertical',
     mousewheel: true,
     hashNavigation:true,
+    on:{
+        setTransition: function() {
+            $(".game_dinosaur").css({"margin-left":"-8rem","opacity":"0", "transition":"0.4s all ease-in-out"})
+            $(".name_logo").css({"margin-left":"-7rem", "opacity":"0", "transition":"0.4s all ease-in-out"})
+            $(".game_text").css({"margin-top": "2rem", "opacity": "0", "transition":"0.4s all ease-in-out"})
+        },
+    },
     //pagination: {
     //  el: '.swiper-pagination',
     //  clickable: true,
@@ -23,18 +32,33 @@ $('#news_head,#news_right').click(function(){
 $('#about_head,#about_right').click(function(){
     mySwiper.slideTo(3, 1000, true);
 })
-
+var thumbsSwiper = new Swiper("#thumbs",{
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    spaceBetween: 10,
+    slidesPerView:4,
+    watchSlidesVisibility: true,
+    direction: 'vertical',
+})
 // 新闻页面轮播
 var newsSwiper = new Swiper('.swiper-news', {
     autoplay: true,
     autoplay: {
         disableOnInteraction: false,
     },
-    direction: 'horizontal',
+    mousewheel: false,
+    spaceBetween: 10,
+    //slidesPerView:4,
+    direction: 'vertical',
     lazy: {
         loadPrevNext: true,
     },
+    thumbs: {
+        swiper: thumbsSwiper,
+    }
 });
+
 // 前一个/后一个新闻资讯切换
 $("#prev_news").click(function(){
     newsSwiper.slidePrev();
@@ -55,6 +79,7 @@ function changeCss(add, change, style_css){
     $(add).css("margin-left","10%")
     $(change).css("margin-left","60%")
 }
+
 function recognize_url_hash(){
     if(window.location.hash=="#index" || window.location.hash==""){
         changeStyle("#index_head", "#game_head,#news_head,#about_head", "active")
@@ -68,8 +93,12 @@ function recognize_url_hash(){
         changeStyle("#game_right", "#index_right,#news_right,#about_right", "right_icon")
         changeCss("#game_hr","#index_hr,#news_hr,#about_hr")
         $(".bg_img").css("background","url(../../static/img/bg_2.jpeg")
+        $(".game_dinosaur").css({"margin-left":"-15rem","opacity":"1", "transition":"0.4s all ease-in-out"})
+        $(".name_logo").css({"margin-left":"0rem", "opacity":"1", "transition":"0.4s all ease-in-out"})
+        $(".game_text").css({"margin-top": "0rem", "opacity":"1", "transition":"0.4s all ease-in-out"})
         $("#game_right").html('<span>游戏</span>')
         $("#index_right, #news_right, #about_right").html("")
+        $("#img_delay").css({'opacity':'1', 'left':'0'})
     }else if(window.location.hash=="#news"){
         changeStyle("#news_head", "#index_head,#game_head,#about_head", "active")
         changeStyle("#news_right", "#index_right,#game_right,#about_right", "right_icon")

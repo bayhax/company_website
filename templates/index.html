@@ -28,7 +28,7 @@
 
     <!--网页顶部导航块-->
     <div class="head_nav">
-            <div class="logo"><img src="{% static 'img/baymax.jpg' %}" alt="logo" height="100%"></div>
+            <div class="logo"><img src="{% static 'img/Logo.png' %}" alt="logo" height="100%"></div>
             <div class="title_link">
                 <ul>
                     <li class="li"><a href="/home/index#index" class="active" id="index_head">首页</a></li>
@@ -61,34 +61,94 @@
             <!-- Swiper -->
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" data-hash="index">Slide 1</div>
-                    <div class="swiper-slide" data-hash="game">Slide 2</div>
+                    <div class="swiper-slide" data-hash="index">
+                        <div class="index_con">
+                            <div class="index_title">
+                                <div>
+                                    <img src="{% static 'img/index_line.png' %}">
+                                    <img src="{% static 'img/index_logo.png' %}">
+                                    <img src="{% static 'img/index_line.png' %}">
+                                </div>
+                                <div>
+                                    <span>北京第零世界科技有限公司</span>
+                                    <span>献给热爱游戏的你</span>
+                                </div>
+                            </div>
+                            <div class="index_img"></div>
+                            <div class="index_footer"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-hash="game">
+                        <div class="game_show" id="game_show">
+                            <div class="game_con">
+                                <div class="name_logo" id="name_logo">
+                                    <img style="height:9rem; width:28rem;" src="{% static 'img/name_logo.png' %}">
+                                </div>
+                                <div class="game_text" id="game_text">
+                                    <div class="game_video" id="game_video">
+                                        <img src="{% static 'img/game_video.png' %}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game_dinosaur">
+                            <img style="width:23rem;heigt:30rem;" src="{% static 'img/game_dinosaur.png' %}">
+                        </div>
+                        </div>
+                    </div>
                     <div class="swiper-slide" data-hash="news">
                         <div class="news_box">
-                            <div class="swiper-news">
-                                <div class="swiper-wrapper">
+                            <!-- 缩略图-->
+                            <div class="swiper-container thumbs" id="thumbs">
+                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <div class="img_box">
-                                        <a href="/news/news_content?news_id=0" target="_blank">
-                                            <img class="news_img swiper-lazy"  id="news_1" src="{% static 'img/news/news_1.jpeg' %}" alt="news_1"></a>
+                                        <div class="">
+                                            <img class="thumbs_img swiper-lazy" src="{% static 'img/news/news_1.jpeg' %}" alt="news_1">
                                         </div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="img_box">
+                                        <div class="">
+                                            <img class="thumbs_img swiper-lazy" src="{% static 'img/news/news_2.jpg' %}" alt="news_2">
+                                        </div>
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="">
+                                            <img class="thumbs_img swiper-lazy" src="{% static 'img/news/news_3.jpeg' %}" alt="news_3">
+                                        </div><div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="">
+                                            <img class="thumbs_img swiper-lazy" src="{% static 'img/news/news_4.jpg' %}" alt="news_4">
+                                        </div><div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 完整图-->
+                            <div class="swiper-news">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="img_box" id="img_box_1">
+                                        <a href="/news/news_content?news_id=0" target="_blank">
+                                            <img class="news_img swiper-lazy" id="news_1" src="{% static 'img/news/news_1.jpeg' %}" alt="news_1"></a>
+                                        </div>
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="img_box" id="img_box_2">
                                         <a href="/news/news_content?news_id=1" target="_blank">
                                             <img class="news_img swiper-lazy" id="news_2" src="{% static 'img/news/news_2.jpg' %}" alt="news_2"></a>
                                         </div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="img_box">
+                                        <div class="img_box" id="img_box_3">
                                         <a href="/news/news_content?news_id=2" target="_blank">
                                             <img class="news_img swiper-lazy" id="news_3" src="{% static 'img/news/news_3.jpeg' %}" alt="news_3"></a>
                                         </div><div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="img_box">
+                                        <div class="img_box" id="img_box_4">
                                         <a href="/news/news_content?news_id=3" target="_blank">
                                             <img class="news_img swiper-lazy" id="news_4" src="{% static 'img/news/news_4.jpg' %}" alt="news_4"></a>
                                         </div><div class="swiper-lazy-preloader"></div>
@@ -143,7 +203,6 @@
     <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/swiper-nav-page.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/news_slide.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/public.js' %}"></script>
 
 </body>
