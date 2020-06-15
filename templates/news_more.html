@@ -21,7 +21,7 @@
 
 	<!--网页顶部导航块-->
     <div class="head_nav">
-            <div class="logo"><img src="{% static 'img/baymax.jpg' %}" alt="logo" height="100%"></div>
+            <div class="logo"><img src="{% static 'img/Logo.png' %}" alt="logo" height="100%"></div>
             <div class="title_link">
                 <ul>
                     <li class="li"><a href="/home/index#index" class="active" id="index_head">首页</a></li>
@@ -29,60 +29,60 @@
                     <li class="li"><a href="/home/index#news" id="news_head">行业资讯</a></li>
                     <li class="li"><a href="/home/index#about" id="about_head">关于我们</a></li>
                 </ul>
-                <div class="hide_title"><img src="{% static 'img/baymax.jpg' %}" height="100%"></div>
+                <div class="hide_title"><img src="{% static 'img/baymax.jpg' %}" height="60%"></div>
             </div>
     </div>
 
 	<!-- 网页面主题内容块 -->
 	<div class="body_con">
 		<div class="body_container" id="body_container">
+            <div class="news_table_con">
             <div class="news_table">
                 {% for news in news_data %}
-                   <a href="/news/news_content?news_id={{ news.news_id }}m"><div class="news_row" id="{{ news.news_id }}">
-                        <span class="news_time">{{ news.news_time }}</span>
-                        <span class="news_title">{{ news.news_title }}</span>
-                        <span class="news_id">{{ news.news_id }}</span>
-                   </div></a>
+                   <a href="/news/news_content?news_id={{ news.news_id }}m">
+                        <div class="news_row" id="{{ news.news_id }}" title="详情">
+                            <span class="news_img"><img style="height:90%;width:90%;" src="{% static 'img/index_name_logo.png' %}"></span>
+                            <span class="news_title">{{ news.news_title }}</span>
+                            <span class="news_time">{{ news.news_time }}</span>
+                        </div>
+                   </a>
                 {% endfor %}
                 <div id="pages" class="text-center" >
                     <nav>
-                    {% if news_data.has_other_pages %}
-                        <ul class="pagination">
+                        <ul class="pagination" style="height:1.5rem;line-height:1.5rem;">
                             <!--判断是否有前一页-->
                             {% if news_data.has_previous %}
-                              <li><a href="?page={{ news_data.previous_page_number }}">&laquo;</a></li>
-                            {% else %}
-                              <li class="disabled"><span>&laquo;</span></li>
+                            <li style="width:4rem;margin-right:1rem;">
+                                <a class="next_prev" href="?page={{ news_data.previous_page_number }}">上一页</a>
+                            </li>
                             {% endif %}
-                            <!--固定页面导航条不能超过三个-->
-                            {% if news_data.has_previous %}
-                              <li><a href="?page={{ news_data.previous_page_number }}">{{ news_data.previous_page_number }}</a></li>
+                            {% if first %}
+                                <li><a href="?page=1">1</a></li>
+                                <li><a href="#">···</a></li>
                             {% endif %}
-                            <li><span>{{ news_data.number }} <span class="sr-only"></span></span></li>
-                            {% if news_data.has_next %}
-                              <li><a href="?page={{ news_data.next_page_number }}">{{ news_data.next_page_number }}</a></li>
+                            {% for p in page_range %}
+                                {% ifequal p news_data.number %}
+                                    <li id="page_now">{{ p }}</li>
+                                {% else %}
+                                    <li><a href="?page={{ p }}" title="第{{ p }}页">{{ p }}</a></li>
+                                {% endifequal %}
+                            {% endfor %}
+                            {% if last %}
+                                <li><a href="#">···</a></li>
+                                <li><a href="?page={{ news_data.paginator.num_pages }}">{{ news_data.paginator.num_pages }}</a></li>
                             {% endif %}
-                            <!--循环共多少页面-->
-<!--                            {% for i in news_data.paginator.page_range %}-->
 
-<!--                              {% if news_data.number == i %}-->
-<!--                                <li><span>{{ i }} <span class="sr-only"></span></span></li>-->
-<!--                              {% else %}-->
-<!--                                <li><a href="?page={{ i }}">{{ i }}</a></li>-->
-<!--                              {% endif %}-->
-<!--                            {% endfor %}-->
-                            <!--判断是否有后一页-->
                             {% if news_data.has_next %}
-                              <li><a href="?page={{ news_data.next_page_number }}">&raquo;</a></li>
-                            {% else %}
-                              <li class="disabled"><span>&raquo;</span></li>
+                                <li style="width:4rem;margin-right:1rem;">
+                                    <a class="next_prev" href="?page={{ news_data.next_page_number }}">下一页</a>
+                                </li>
                             {% endif %}
                         </ul>
-                    {% endif %}
+
                     </nav>
                 </div>
             </div>
-
+            </div>
 			<div id="box_footer" class="box_footer">
                 <footer id="footer" class="footer">
                     <div class="box">
@@ -99,17 +99,16 @@
                 </footer>
             </div>
         </div>
+        <div style="position:absolute;bottom:0;left:50%;"><img src="{% static 'img/PageDown.png'%}"></div>
 	</div>
-
+    <div id="bg_img" class="bg_img active_img"></div>
     <script>
     $(document).ready(function(){
-        $(".title_link ul").css({'margin-left':'90%','width':'0','opacity':'0','overflow':'hidden'})
-        // 顶部导航栏隐藏
         $(".hide_title").click(function(){
             if($(".title_link ul").css('width') != '0px'){
-                $(".title_link ul").css({'margin-left':'90%','width':'0','opacity':'0','overflow':'hidden'})
+                $(".title_link ul").css({'margin-left':'25rem','width':'0','opacity':'0','overflow':'hidden'})
             }else{
-                $(".title_link ul").css({'margin-left':'0','width':'90%','opacity':'1','overflow':'hidden'})
+                $(".title_link ul").css({'margin-left':'0','width':'25rem','opacity':'1','overflow':'hidden'})
             }
         })
     })

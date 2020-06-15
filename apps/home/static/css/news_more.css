@@ -1,33 +1,68 @@
-.news_table {
+.news_table_con {
+    background: url(../img/news_more_bg.png);
     font-size: 16px;
-    width: 80%;
-    height: 70%;
-    margin: 10% 10% 20%;
+    width: 85%;
+    height: 80%;
+    margin-top:2%;
+    margin-left: 7%;
+}
+
+.news_table {
+    display: inline-block;
+    font-size: 16px;
+    width: 85%;
+    height: 80%;
+    margin-top:4%;
+    margin-left: 7%;
 }
 .news_table .news_row {
     cursor: pointer;
     text-align: left;
     display: inline-block;
-    height: 10%;
-    width: 100%;
-    background: #cad6f9;
+    height: 13%;
+    width: 93%;
     line-height:3rem;
+    margin-top: 1rem;
+    margin-left: 5%;
+    border: 1px solid lightgreen;
+    background: url(../img/news_row.png)
+}
+.news_row:before {
+    content: attr(title);
+    position: absolute;
+    left: 78%;
+    margin-top: 3rem;
+    /* top: 51%; */
+    width: 7%;
+    height: 6%;
+    -webkit-transform: translate(-20%, -50%);
+    padding: 0 10px;
+    background: url(../img/button_next_prev.png);
+    font-size: 12px;
 }
 .news_table .news_row:hover {
     background: #b5c5f5;
 }
+.news_table .news_img {
+    display: inline-block;
+    height: 80%;
+    width: 15%;
+    margin-top:1%;
+    margin-left: 1%;
+}
 .news_table .news_time {
     display: inline-block;
     width: 15%;
+    margin-left: 1.5rem;
 }
 .news_table .news_title {
     display: inline-block;
     width: 60%;
+    height: 80%;
+    position: relative;
+    bottom: 1rem;
 }
-.news_table .news_id {
-    display: inline-block;
-    width: 15%;
-}
+
 .news_table ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -41,19 +76,44 @@
             justify-content: center;
     list-style:none;
     list-style:none;
-    margin:10px 40%;
+    margin:1rem 5rem;
 }
 .news_table ul li{
     display: inline-block;
-    width: 20%;
+    width: 3rem;
+    height: 100%;
+    line-height: 100%;
     text-align: center;
     -webkit-transition: 0.2s all liner;
     -o-transition: 0.2s all liner;
     transition: 0.2s all liner;
     cursor: pointer;
 }
+.text-center {
+    position: absolute;
+    bottom: 8.5rem;
+    left: 15%;
+    right: 15%;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1.2rem;
+}
 #pages ul li a{
     display: inline-block;
     margin: 0 10%;
-    width:80%;
+    width:2rem;
+    height:1.5rem;
+    line-height: 1.5rem;
+    background: no-repeat url(../img/page_bg.png)
+}
+#page_now {
+    height: 1.5rem;
+    line-height: 1.5rem;
+    width: 2rem;
+    background: no-repeat url(../img/page_now.png)
+}
+#pages ul li a.next_prev {
+    width: 4rem;
+    font-size: 1rem;
+    background: no-repeat url(../img/page_next_prev.png)
 }

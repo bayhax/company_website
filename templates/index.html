@@ -63,19 +63,27 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" data-hash="index">
                         <div class="index_con">
-                            <div class="index_title">
-                                <div>
-                                    <img src="{% static 'img/index_line.png' %}">
+                            <div class="index_line">
+                                <img class="index_line_cut" src="{% static 'img/index_line.png' %}">
+                                <div class="index_logo">
                                     <img src="{% static 'img/index_logo.png' %}">
-                                    <img src="{% static 'img/index_line.png' %}">
                                 </div>
-                                <div>
-                                    <span>北京第零世界科技有限公司</span>
-                                    <span>献给热爱游戏的你</span>
+                                <div class="index_text">
+                                    <span>北京第零世界科技有限公司</span><br>
+                                    <span class="to">—— &nbsp;献给热爱游戏的你</span>
                                 </div>
                             </div>
-                            <div class="index_img"></div>
-                            <div class="index_footer"></div>
+                            <div class="index_img">
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div class="index_footer">
+                                <div style="position:relative;bottom:-0.8rem;"><img src="{% static 'img/index_name_logo.png' %}"></div>
+                                <img src="{% static 'img/index_footer.png' %}">
+                            </div>
                         </div>
                     </div>
                     <div class="swiper-slide" data-hash="game">
@@ -103,23 +111,27 @@
                                     <div class="swiper-slide">
                                         <div class="">
                                             <img class="thumbs_img swiper-lazy" src="{% static 'img/news/news_1.jpeg' %}" alt="news_1">
+                                            <span class="thumbs_title" id="thumbs_title_1"></span>
                                         </div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="">
                                             <img class="thumbs_img swiper-lazy" src="{% static 'img/news/news_2.jpg' %}" alt="news_2">
+                                            <span class="thumbs_title" id="thumbs_title_2"></span>
                                         </div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="">
                                             <img class="thumbs_img swiper-lazy" src="{% static 'img/news/news_3.jpeg' %}" alt="news_3">
+                                            <span class="thumbs_title" id="thumbs_title_3"></span>
                                         </div><div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="">
                                             <img class="thumbs_img swiper-lazy" src="{% static 'img/news/news_4.jpg' %}" alt="news_4">
+                                            <span class="thumbs_title" id="thumbs_title_4"></span>
                                         </div><div class="swiper-lazy-preloader"></div>
                                     </div>
                                 </div>
@@ -128,47 +140,64 @@
                             <div class="swiper-news">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
+                                        <div class="img_box_con">
+                                        <span class="img_box_title" id="title_1"></span>
                                         <div class="img_box" id="img_box_1">
                                         <a href="/news/news_content?news_id=0" target="_blank">
                                             <img class="news_img swiper-lazy" id="news_1" src="{% static 'img/news/news_1.jpeg' %}" alt="news_1"></a>
                                         </div>
-                                        <div class="swiper-lazy-preloader"></div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="img_box" id="img_box_2">
-                                        <a href="/news/news_content?news_id=1" target="_blank">
-                                            <img class="news_img swiper-lazy" id="news_2" src="{% static 'img/news/news_2.jpg' %}" alt="news_2"></a>
                                         </div>
                                         <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div class="swiper-slide">
+                                        <div class="img_box_con">
+                                            <span class="img_box_title" id="title_2"></span>
+                                        <div class="img_box" id="img_box_2">
+                                        <a href="/news/news_content?news_id=1" target="_blank">
+                                            <img class="news_img swiper-lazy" id="news_2" src="{% static 'img/news/news_2.jpg' %}" alt="news_2"></a>
+                                        </div>
+                                        </div>
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="img_box_con">
+                                            <span class="img_box_title" id="title_3"></span>
                                         <div class="img_box" id="img_box_3">
                                         <a href="/news/news_content?news_id=2" target="_blank">
                                             <img class="news_img swiper-lazy" id="news_3" src="{% static 'img/news/news_3.jpeg' %}" alt="news_3"></a>
-                                        </div><div class="swiper-lazy-preloader"></div>
+                                        </div>
+                                        </div>
+                                            <div class="swiper-lazy-preloader"></div>
                                     </div>
                                     <div class="swiper-slide">
+                                        <div class="img_box_con">
+                                            <span class="img_box_title" id="title_4"></span>
                                         <div class="img_box" id="img_box_4">
                                         <a href="/news/news_content?news_id=3" target="_blank">
                                             <img class="news_img swiper-lazy" id="news_4" src="{% static 'img/news/news_4.jpg' %}" alt="news_4"></a>
-                                        </div><div class="swiper-lazy-preloader"></div>
+                                        </div>
+                                        </div>
+                                            <div class="swiper-lazy-preloader"></div>
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" id="prev_news" class="button_news button_news_prev">上一个</button>
-                            <button type="button" id="next_news" class="button_news">下一个</button>
-                            <a href="/news/news_more"><button type="button" id="news_more" class="button_news button_news_more">
-                                查看更多</button></a>
+                            <div class="button_div">
+                                <button type="button" id="prev_news" class="button_news button_news_prev">上一个</button>
+
+                                <a href="/news/news_more"><button type="button" id="news_more" class="button_news button_news_more">
+                                    查看更多</button></a>
+                                <button type="button" id="next_news" class="button_news">下一个</button>
+                            </div>
                         </div>
                     </div>
                     <div class="swiper-slide" data-hash="about">
                         <div class="about_box">
                         <div class="about_us">
-                        <h2 style="font-size:30px; text-align:center;">关于我们</h2>
+                        <h2 style="font-size:24px;margin-top:8rem;">关于我们</h2>
                             <p>北京第零世界科技有限公司成立于2018年1月，企业围绕"诚信透明、主动担当、工匠精神、活力进取"四大文化，致力于精品游戏研发。</p>
                         </div>
                         <div class="contact_us">
-                            <h2 style="font-size:30px;text-align:center">联系我们</h2>
+                            <h2 style="font-size:24px;margin-top:-5rem;">联系我们</h2>
                             <p>地址： 北京市朝阳区建国路15号院甲1号北岸1292三间房创意生活园区9-7291</p>
                             <p>邮箱：</p>
                         </div>
@@ -180,20 +209,20 @@
             </div>
             <!--页面底部滑入式页尾-->
             <div id="box_footer" class="box_footer">
-        <footer id="footer" class="footer">
-            <div class="box">
-                <div class="content">
-                    <p>
-                        <a href="/home/supervisor" target="_blank">家长监护工程</a><span>|</span>
-                        <a href="/home/dispute" target="_blank">纠纷处理</a>
-                    </p>
-                    <p><span>网络文化经营许可证： 京网文[2019]3669-352京ICP证: 京B2-20191828</span></p>
-                    <p><span>京ICP备 19009550号 ©2019-2020 北京第零世界科技有限公司 版权所有</span></p>
+                <footer id="footer" class="footer">
+                    <div class="box">
+                        <div class="content">
+                            <p>
+                                <a href="/home/supervisor" target="_blank">家长监护工程</a><span>|</span>
+                                <a href="/home/dispute" target="_blank">纠纷处理</a>
+                            </p>
+                            <p><span>网络文化经营许可证： 京网文[2019]3669-352京ICP证: 京B2-20191828</span></p>
+                            <p><span>京ICP备 19009550号 ©2019-2020 北京第零世界科技有限公司 版权所有</span></p>
 
-                </div>
+                        </div>
+                    </div>
+                </footer>
             </div>
-        </footer>
-    </div>
         </div>
         <div style="position:absolute;bottom:0;left:50%;"><img src="{% static 'img/PageDown.png'%}"></div>
     </div>
