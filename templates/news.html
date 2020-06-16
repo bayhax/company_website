@@ -15,7 +15,7 @@
 
 	<!--网页顶部导航块-->
      <div class="head_nav">
-            <div class="logo"><img src="{% static 'img/baymax.jpg' %}" alt="logo" height="100%"></div>
+            <div class="logo"><img src="{% static 'img/Logo.png' %}" alt="logo" height="100%"></div>
             <div class="title_link">
                 <ul>
                     <li class="li"><a href="/home/index#index" class="active" id="index_head">首页</a></li>
@@ -23,13 +23,14 @@
                     <li class="li"><a href="/home/index#news" id="news_head">行业资讯</a></li>
                     <li class="li"><a href="/home/index#about" id="about_head">关于我们</a></li>
                 </ul>
-                <div class="hide_title"><img src="{% static 'img/baymax.jpg' %}" height="100%"></div>
+                <div class="hide_title"><img src="{% static 'img/Logo.png' %}" height="55%"></div>
             </div>
         </div>
 
 	<!-- 网页面主题内容块 -->
 	<div class="body_con">
 		<div class="body_container" id="body_container">
+            <div class="news">
             <div class="news_title">
                 {{ title }}
             </div>
@@ -40,6 +41,7 @@
                 {% autoescape off %}
                     {{ content }}
                 {% endautoescape %}
+            </div>
             </div>
 			<div id="box_footer" class="box_footer">
         <footer id="footer" class="footer">

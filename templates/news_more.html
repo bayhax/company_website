@@ -29,7 +29,7 @@
                     <li class="li"><a href="/home/index#news" id="news_head">行业资讯</a></li>
                     <li class="li"><a href="/home/index#about" id="about_head">关于我们</a></li>
                 </ul>
-                <div class="hide_title"><img src="{% static 'img/baymax.jpg' %}" height="60%"></div>
+                <div class="hide_title"><img src="{% static 'img/Logo.png' %}" height="55%"></div>
             </div>
     </div>
 
@@ -39,9 +39,9 @@
             <div class="news_table_con">
             <div class="news_table">
                 {% for news in news_data %}
-                   <a href="/news/news_content?news_id={{ news.news_id }}m">
+                   <a href="/news/news_content?news_id={{ news.news_id }}">
                         <div class="news_row" id="{{ news.news_id }}" title="详情">
-                            <span class="news_img"><img style="height:90%;width:90%;" src="{% static 'img/index_name_logo.png' %}"></span>
+                            <span class="news_img"><img style="height:90%;width:90%;" src="../media/{{ news.news_img }}"></span>
                             <span class="news_title">{{ news.news_title }}</span>
                             <span class="news_time">{{ news.news_time }}</span>
                         </div>

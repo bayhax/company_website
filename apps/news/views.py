@@ -23,7 +23,7 @@ def update_redis(sender, **kwargs):
     if redis_conn.exists('news:%d' % news_id):
         redis_conn.delete('news:%d' % news_id)
     redis_conn.hmset('news:%d' % news_id,
-                     {'title': news['title'], 'content': news['content'],
+                     {'title': news['title'], 'content': news['content'], 'img': str(news['img']),
                       'mod_date': (news['mod_date'] + timedelta(hours=8)).strftime("%Y-%m-%d %H:%M"),
                       'add_date': (news['add_date'] + timedelta(hours=8)).strftime("%Y-%m-%d %H:%M")})
 
@@ -44,11 +44,7 @@ class NewsContentView(View):
 
     def get(self, request):
         news_id = request.GET['news_id']
-        if 'm' in news_id:
-            news_id = int(news_id[:-1])
-        else:
-            all_news = News.objects.order_by('id').reverse()[:4]
-            news_id = all_news[int(request.GET['news_id'])].id
+        news_id = int(news_id)
         # 先从缓存读取，如果没有，去数据库寻找，并且存入缓存。
         redis_conn = get_redis_connection('default')
         if redis_conn.exists('news:%d' % news_id):
@@ -73,12 +69,12 @@ class NewsMoreView(View):
     """查看更多"""
 
     def get(self, request):
-        all_news = News.objects.all().values_list('mod_date', 'title', 'id')
-        title = ['news_time', 'news_title', 'news_id']
+        all_news = News.objects.all().values_list('mod_date', 'title', 'id', 'img')
+        title = ['news_time', 'news_title', 'news_id', 'news_img']
         fina = []
         # 组json字符串(按表头字段)
         for news in all_news:
-            info = [news[0].strftime('%m月%d日'), news[1], news[2]]
+            info = [news[0].strftime('%m月%d日'), news[1], news[2], str(news[3])]
             temp = dict(zip(title, info))
             fina.append(temp)
         # 分页器，每页显示几条数据
@@ -132,8 +128,13 @@ class NewsTitleView(View):
         return redirect('/home/index#news')
 
     def post(self, request):
+        # 最新的四则资讯
         all_title = []
+        all_img = []
+        all_id = []
         all_news = News.objects.order_by('id').reverse()[:4]
         for news in all_news:
             all_title.append(news.title)
-        return HttpResponse(json.dumps({'title': all_title}))
+            all_img.append(str(news.img))
+            all_id.append(news.id)
+        return HttpResponse(json.dumps({'title': all_title, 'img': all_img, 'id': all_id}))

@@ -126,6 +126,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/home/company_website/media'
 # 指定收集静态文件的路径
 # STATIC_ROOT = '/home/static'
 # ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'

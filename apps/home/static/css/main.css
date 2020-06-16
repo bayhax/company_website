@@ -166,6 +166,18 @@ html,body{height:100%;}
     height: 90%;
     float: right;
 }
+.right_up {
+    background: no-repeat 83.3% url(../img/up.png);
+    background-color: transparent;
+    height: 2rem;
+    margin-top: 1rem;
+}
+.right_down {
+    background: no-repeat 83.3% url(../img/down.png);
+    background-color: transparent;
+    height: 2rem;
+
+}
 .right_nav ul {
     background: no-repeat 80% url(../img/right.png);
     display: -webkit-box;
@@ -179,10 +191,11 @@ html,body{height:100%;}
         -ms-flex-pack: center;
             justify-content: center;
     list-style:none;
-    height: 40%;
+    height: 19rem;
     width: 100%;
 }
 .right_nav ul li{
+    /*background: no-repeat 0 1.4rem url(../img/triangle.png);*/
     display: inline-block;
     height: 20%;
     width: 77%;
@@ -193,7 +206,7 @@ html,body{height:100%;}
     display: inline-block;
     width: 80%;
     color: white;
-    margin-left: 10%;
+    margin-left: 1rem;
     text-align: center;
 }
 .game_show {
@@ -282,9 +295,10 @@ html,body{height:100%;}
     left: 12%;
 }
 .swiper-news {
-    width: 40rem;
-    height: 35rem;
+    width: 43rem;
+    height: 36rem;
     overflow: hidden;
+    margin-top: 1.2rem;
     margin-left: auto;
     margin-right: auto;
     --swiper-theme-color: #ff6600;
@@ -315,13 +329,13 @@ html,body{height:100%;}
     background: url(../img/button_next_prev.png);
 }
 .news_box .button_news:hover{
-    background:#268DFF;
+    background:#e27a3f;
 }
 .news_box .button_news_prev {
   margin-left:5rem;
 }
 .news_box .button_news_more{
-    background: url(../img/button_news_more.png);
+    background: url(../img/button_next_prev.png);
     margin-left: 3rem;
 }
 .news_img {
@@ -515,6 +529,14 @@ html,body{height:100%;}
     font-size:18px;
     margin: 10px;
     text-align: left;
+}
+.news {
+    width: 100rem;
+    height: 50rem;
+    margin: auto;
+    background: no-repeat url(../img/news_more_bg.png);
+    background-color: transparent;
+    overflow: auto;
 }
 .news_graphic {
     color: #f7f7f7;
