@@ -132,7 +132,7 @@ class NewsTitleView(View):
         all_title = []
         all_img = []
         all_id = []
-        all_news = News.objects.order_by('id').reverse()[:4]
+        all_news = News.objects.order_by('id').reverse()[:5]
         for news in all_news:
             all_title.append(news.title)
             all_img.append(str(news.img))

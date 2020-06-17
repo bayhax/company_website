@@ -33,12 +33,17 @@ $('#about_head,#about_right').click(function(){
     mySwiper.slideTo(3, 1000, true);
 })
 var thumbsSwiper = new Swiper("#thumbs",{
-    freeMode: true,
+    /*freeMode: true,*/
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
     spaceBetween: 10,
-    slidesPerView:4,
-    watchSlidesVisibility: true,
+//    slidesPerView:4,
+    loop: true,
+    loopedSlides : 7,
+    slidesPerView: 4,
+    speed: 1000,
+    centeredSlides: true,
+    centeredSlidesBounds: true,
     direction: 'vertical',
     autoplay: true,
     autoplay: {
@@ -51,6 +56,11 @@ var newsSwiper = new Swiper('.swiper-news', {
     autoplay: {
         disableOnInteraction: false,
     },
+    effect: 'fade',
+    loop: true,
+    speed: 1000,
+    loopedSlides : 7,
+    slidesPerView: 1,
     mousewheel: false,
     spaceBetween: 10,
     //slidesPerView:4,
@@ -124,14 +134,17 @@ function recognize_url_hash(){
             $("#news_2, #thumbs_img_2").attr("src", "../media/" + temp.img[1])
             $("#news_3, #thumbs_img_3").attr("src", "../media/" + temp.img[2])
             $("#news_4, #thumbs_img_4").attr("src", "../media/" + temp.img[3])
+            $("#news_5, #thumbs_img_5").attr("src", "../media/" + temp.img[4])
             $("#news_id_1").attr("href", "/news/news_content?news_id=" + temp.id[0])
             $("#news_id_2").attr("href", "/news/news_content?news_id=" + temp.id[1])
             $("#news_id_3").attr("href", "/news/news_content?news_id=" + temp.id[2])
             $("#news_id_4").attr("href", "/news/news_content?news_id=" + temp.id[3])
+            $("#news_id_5").attr("href", "/news/news_content?news_id=" + temp.id[4])
             $("#title_1, #thumbs_title_1").html(temp.title[0])
             $("#title_2, #thumbs_title_2").html(temp.title[1])
             $("#title_3, #thumbs_title_3").html(temp.title[2])
             $("#title_4, #thumbs_title_4").html(temp.title[3])
+            $("#title_5, #thumbs_title_5").html(temp.title[4])
         })
     }else{
         changeStyle("#about_head", "#index_head,#game_head,#news_head", "active")
