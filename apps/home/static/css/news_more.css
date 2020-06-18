@@ -9,7 +9,7 @@
 
 .news_table {
     display: inline-block;
-    font-size: 16px;
+    font-size: 1.5rem;
     width: 85%;
     height: 80%;
     margin-top:4%;
@@ -108,13 +108,13 @@
     display: inline-block;
     margin: 0 10%;
     width:2rem;
-    height:1.5rem;
-    line-height: 1.5rem;
+    height:2.5rem;
+    line-height: 2rem;
     background: no-repeat url(../img/page_bg.png)
 }
 #page_now {
-    height: 1.5rem;
-    line-height: 1.5rem;
+    height: 2.5rem;
+    line-height: 2rem;
     width: 2rem;
     background: no-repeat url(../img/page_now.png)
 }

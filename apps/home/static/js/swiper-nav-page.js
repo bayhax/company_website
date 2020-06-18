@@ -10,8 +10,9 @@ var mySwiper = new Swiper('.swiper-container', {
         setTransition: function() {
             $(".game_dinosaur").css({"margin-left":"-8rem","opacity":"0", "transition":"0.4s all ease-in-out"})
             $(".name_logo").css({"margin-left":"-7rem", "opacity":"0", "transition":"0.4s all ease-in-out"})
-            $(".game_text").css({"margin-top": "2rem", "opacity": "0", "transition":"0.4s all ease-in-out"})
+            $(".game_text").css({"margin-top": "6rem", "opacity": "0", "transition":"0.4s all ease-in-out"})
         },
+        console.log(realIndex)
     },
     //pagination: {
     //  el: '.swiper-pagination',
@@ -103,31 +104,30 @@ function recognize_url_hash(){
         changeStyle("#index_head", "#game_head,#news_head,#about_head", "active")
         changeIcon("#right_li_1", "#right_li_2,#right_li_3,#right_li_4")
         changeCss("#index_hr","#game_hr,#news_hr,#about_hr")
-        $(".index_img ul li").css({"opacity": "1", "margin-top": "6rem"})
-        $(".bg_img").css("background","url(../../static/img/bg_1.png")
+        $(".index_img ul li").css({"opacity": "1", "margin-top": "10rem"})
+        $(".bg_img").css({"background":"no-repeat url(../../static/img/bg_1.png);", "background-size": "cover;"})
         $("#index_right").html('<span style="position:relative;margin-left:-1.5rem;font-size:0.9rem;">首页</span>')
         $("#game_right, #news_right, #about_right").html("")
     }else if(window.location.hash=="#game"){
         changeStyle("#game_head", "#index_head,#news_head,#about_head", "active")
         changeIcon("#right_li_2", "#right_li_1,#right_li_3,#right_li_4")
         changeCss("#game_hr","#index_hr,#news_hr,#about_hr")
-        $(".index_img ul li").css({"opacity": "0", "margin-top": "8rem"})
-        $(".bg_img").css("background","url(../../static/img/bg_1.png")
-        $(".game_dinosaur").css({"margin-left":"-15rem","opacity":"1", "transition":"0.4s all ease-in-out"})
+        $(".index_img ul li").css({"opacity": "0", "margin-top": "12rem"})
+        $(".bg_img").css({"background":"no-repeat url(../../static/img/bg_1.png);", "background-size": "cover;"})
+        $(".game_dinosaur").css({"margin-left":"-17rem","opacity":"1", "transition":"0.4s all ease-in-out"})
         $(".name_logo").css({"margin-left":"0rem", "opacity":"1", "transition":"0.4s all ease-in-out"})
-        $(".game_text").css({"margin-top": "0rem", "opacity":"1", "transition":"0.4s all ease-in-out"})
+        $("#game_text").css({"margin-top": "4rem", "opacity":"1", "transition":"0.4s all ease-in-out"})
         $("#game_right").html('<span style="position:relative;margin-left:-1.5rem;font-size:0.9rem;">游戏</span>')
         $("#index_right, #news_right, #about_right").html("")
-        $("#img_delay").css({'opacity':'1', 'left':'0'})
+        $("#img_delay").css({'opacity':'1;', 'left':'0'})
     }else if(window.location.hash=="#news"){
         changeStyle("#news_head", "#index_head,#game_head,#about_head", "active")
         changeIcon("#right_li_3", "#right_li_2,#right_li_1,#right_li_4")
         changeCss("#news_hr","#index_hr,#game_hr,#about_hr")
-        $(".index_img ul li").css({"opacity": "0", "margin-top": "8rem"})
-        $(".bg_img").css("background","url(../../static/img/bg_1.png")
+        $(".index_img ul li").css({"opacity": "0;", "margin-top": "12rem"})
+        $(".bg_img").css({"background":"no-repeat url(../../static/img/bg_1.png);", "background-size": "cover;"})
         $("#news_right").html('<span style="position:relative;margin-left:-1rem;font-size:0.9rem;">行业资讯</span>')
         $("#game_right, #index_right, #about_right").html("")
-
         $.post("/news/news_title", function(ret){
             var temp = JSON.parse(ret)
             $("#news_1, #thumbs_img_1").attr("src", "../media/" + temp.img[0])
@@ -150,8 +150,8 @@ function recognize_url_hash(){
         changeStyle("#about_head", "#index_head,#game_head,#news_head", "active")
         changeIcon("#right_li_4", "#right_li_2,#right_li_3,#right_li_1")
         changeCss("#about_hr","#index_hr,#game_hr,#news_hr")
-        $(".index_img ul li").css({"opacity": "0", "margin-top": "8rem"})
-        $(".bg_img").css("background","url(../../static/img/bg_1.png")
+        $(".index_img ul li").css({"opacity": "0", "margin-top": "12rem"})
+        $(".bg_img").css({"background":"no-repeat url(../../static/img/bg_1.png);", "background-size": "cover;"})
         $("#about_right").html('<span style="position:relative;margin-left:-1rem;font-size:0.9rem;">关于我们</span>')
         $("#game_right, #news_right, #index_right").html("")
     };

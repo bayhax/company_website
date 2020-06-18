@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>北京第零世界科技有限公司</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Link Swiper's CSS -->
     <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
@@ -36,7 +36,7 @@
                     <li class="li"><a href="/home/index#news" id="news_head">行业资讯</a></li>
                     <li class="li"><a href="/home/index#about" id="about_head">关于我们</a></li>
                 </ul>
-                <div class="hide_title"><img src="{% static 'img/Logo.png' %}" height="50%"></div>
+                <div class="hide_title"><img src="{% static 'img/hide_title.png' %}" style="height: 1.5rem;margin-top: 0.5rem;"></div>
             </div>
         </div>
 
@@ -81,8 +81,8 @@
                                 </ul>
                             </div>
                             <div class="index_footer">
-                                <div style="position:relative;bottom:-0.8rem;"><img src="{% static 'img/index_name_logo.png' %}"></div>
-                                <img src="{% static 'img/index_footer.png' %}">
+                                <div style="position:relative;bottom:-0.8rem;"><img src="{% static 'img/index_name_logo.png' %}" style="width:20%;"></div>
+                                <img src="{% static 'img/index_footer.png' %}" style="width:80%;">
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                                 </div>
                             </div>
                             <div class="game_dinosaur">
-                            <img style="width:23rem;heigt:30rem;" src="{% static 'img/game_dinosaur.png' %}">
+                            <img style="width:24rem;height:37rem;" src="{% static 'img/game_dinosaur.png' %}">
                         </div>
                         </div>
                     </div>
@@ -205,7 +205,6 @@
                             </div>
                             <div class="button_div">
                                 <button type="button" id="prev_news" class="button_news button_news_prev"><font style="font-size:1.8rem;">&larr;</font>上一个</button>
-
                                 <a href="/news/news_more"><button type="button" id="news_more" class="button_news button_news_more">
                                     查看更多</button></a>
                                 <button type="button" id="next_news" class="button_news">下一个<font style="font-size:1.8rem;">&rarr;</font></button>
