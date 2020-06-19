@@ -69,3 +69,4 @@ def upload_image(request):
         data['error'] = False
         data['location'] = ('../../../../../static/media/upload/%s/%s' % (news_id, filename_new))
     return HttpResponse(json.dumps(data), content_type="application/json; charset='utf-8'")
+

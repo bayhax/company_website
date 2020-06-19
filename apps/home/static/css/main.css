@@ -12,7 +12,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     background-size: 100% 100%;
     -webkit-transition: all 1s linear;
     -o-transition: all 1s linear;
-    transition: all 1s linear;
+    transition: all 0.8s ease-in-out;
 }
 
 .active_img {
@@ -47,9 +47,31 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     display: inline-block;
     margin-top: 2rem;
 }
+.index_next_page {
+    cursor: pointer;
+    display: inline-block;
+    width: 11%;
+    height: 4rem;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    outline: none;
+    text-align:center;
+    line-height:100%;
+    padding:0.3em;
+    border: 0px;
+    -webkit-box-shadow:0px 1px 2px rgba(0,0,0,0.2);
+            box-shadow:0px 1px 2px rgba(0,0,0,0.2);
+    text-shadow:0px 1px 1px rgba(0,0,0,0.3);
+    background: url(../img/button_next_prev.png);
+}
+.index_next_page:hover {
+    background: #e27a3f;
+}
 .index_img {
     width: 80%;
-    margin-left: 15%;
+    margin-left: 11%;
+    position: absolute;
+    bottom: 40%;
 }
 .index_img ul {
     list-style: none;
@@ -75,7 +97,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     left: 4.5rem;
     right: 3rem;
 }
-.body_con{position:relative;overflow:hidden;z-index:0;min-width:800px;max-width:2560px;height:90%;margin:0 auto}
+.body_con{position:relative;overflow:hidden;z-index:0;min-width:800px;max-width:2560px;height:92%;margin:0 auto}
 
 .body_container {
     height: 100%;
@@ -141,11 +163,11 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     line-height: 5rem;
 }
 .title_link ul li a:hover {
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid #e27a3f;
 
 }
 .active {
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid #e27a3f;
 }
 .active_right {
     content: '<hr />';
@@ -220,7 +242,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
 .game_con {
     width: 57rem;
     height: 34.5rem;
-    margin-top: 10%;
+    margin-top: 10rem;
     margin-left: 3%;
     background: url(../img/game_bottom.png);
     display: inline-block
@@ -250,7 +272,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
 }
 .game_dinosaur {
     position: absolute;
-    margin-left: -8rem;
+    margin-left: 13rem;
     display: inline-block;
     top:15%;
     opacity: 0;
@@ -379,15 +401,15 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
 }
 .img_box {
     cursor: pointer;
-    width: 45rem;
-    height: 25rem;
+    width: 46rem;
+    height: 27rem;
     overflow: hidden;
     display: inline-block;
     margin-top: 4rem;
+    margin-left: 0.8rem;
 }
 .img_box_bg {
     position: relative;
-    z-inde: -1;
     width: 56.3rem;
     height: 35rem;
     left: 40rem;
@@ -434,13 +456,13 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     transform:scale(1.2);
 }
 /*页尾隐藏在页面下方，完全透明显示出来后多高内容 -webkit- -moz- 不同浏览器的布局属性*/
-.box_footer{position:absolute;top:auto;left:0;right:0;bottom:-6rem;z-index:1;height:7rem;opacity:0;background:rgba(0,0,0,0.6);-webkit-transition:all .5s;-o-transition:all .5s;transition:all .5s}
+.box_footer{position:absolute;top:auto;left:0;right:0;bottom:-10rem;z-index:1;height:11rem;opacity:0;background:rgba(0,0,0,0.6);-webkit-transition:all .5s;-o-transition:all .5s;transition:all .5s}
 /*鼠标移动到什么区域可以显示页尾，中间高两边低*/
 .box_footer:before{content:'';display:block;position:absolute;top:auto;left:0;right:0;bottom:0;z-index:0;width:20rem;height:130%;margin:0 auto}
 /*鼠标移动到该区域，显示出来，y轴向上移动页面下方的距离，从下向上滑入的效果*/
-.box_footer:hover{opacity:0.6;-webkit-transform:translateY(-2rem);-ms-transform:translateY(-2rem);transform:translateY(-6rem)}
+.box_footer:hover{opacity:0.6;-webkit-transform:translateY(-2rem);-ms-transform:translateY(-2rem);transform:translateY(-10rem)}
 /*显示出来后footer的大小*/
-.box_footer .footer{height:6rem}
+.box_footer .footer{height:11rem}
 .footer {
     position: relative;
     overflow: hidden;
@@ -536,12 +558,13 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     display: inline-block;
     height:50%;
     width: 80%;
+    color: #F2F2F2;
     margin-left: 10%;
-    margin-top: 5%;
+    margin-top: 3rem;
     text-align: left;
 }
 .about_us p{
-    font-size:18px;
+    font-size:1.5rem;
     margin:10px;
     text-align: left;
 }
@@ -549,11 +572,12 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     display: inline-block;
     height: 50%;
     width: 80%;
+    color: #F2F2F2;
     margin-left: 10%;
     text-align:left;
 }
 .contact_us p {
-    font-size:18px;
+    font-size:1.5rem;
     margin: 10px;
     text-align: left;
 }

@@ -1,4 +1,6 @@
-
+function change_bg(img){
+    $(".bg_img").css({"background":img, "background-size": "cover;"})
+}
 // 整体swiper切换
 var mySwiper = new Swiper('.swiper-container', {
     lazy: true,
@@ -8,31 +10,41 @@ var mySwiper = new Swiper('.swiper-container', {
     hashNavigation:true,
     on:{
         setTransition: function() {
-            $(".game_dinosaur").css({"margin-left":"-8rem","opacity":"0", "transition":"0.4s all ease-in-out"})
+            $(".game_dinosaur").css({"margin-left":"13rem","opacity":"0", "transition":"0.4s all ease-in-out"})
             $(".name_logo").css({"margin-left":"-7rem", "opacity":"0", "transition":"0.4s all ease-in-out"})
             $(".game_text").css({"margin-top": "6rem", "opacity": "0", "transition":"0.4s all ease-in-out"})
         },
-        console.log(realIndex)
+        slideChangeTransitionStart: function(){
+            if(this.realIndex == 0){
+                change_bg("no-repeat url(../../static/img/bg_1.png)")
+            }else if(this.realIndex == 1){
+                change_bg("no-repeat url(../../static/img/bg_2.png)")
+            }else if(this.realIndex == 2){
+                change_bg("no-repeat url(../../static/img/bg_3.png)")
+            }else{
+                change_bg("no-repeat url(../../static/img/bg_4.png)")
+            }
+        },
     },
-    //pagination: {
-    //  el: '.swiper-pagination',
-    //  clickable: true,
-
-    //},
 });
+
 // 导航条切换swiper页面
 $('#index_head,#index_right').click(function(){
-    mySwiper.slideTo(0, 1000, true);
+    mySwiper[0].slideTo(0, 1000, true);
 })
-$('#game_head,#game_right').click(function(){
-    mySwiper.slideTo(1, 1000, true);
+$('#game_head,#game_right,#next_page').click(function(){
+    mySwiper[0].slideTo(1, 1000, true);
 })
 $('#news_head,#news_right').click(function(){
-    mySwiper.slideTo(2, 1000, true);
+    mySwiper[0].slideTo(2, 1000, true);
 })
 $('#about_head,#about_right').click(function(){
-    mySwiper.slideTo(3, 1000, true);
+    mySwiper[0].slideTo(3, 1000, true);
 })
+function title_opacity(add, remove){
+    $(add).css({"opacity":"1","transition":"all 0.5s ease-in-out"})
+    $(remove).css({"opacity":"0","transition":"all 0.5s ease-in-out"})
+}
 var thumbsSwiper = new Swiper("#thumbs",{
     /*freeMode: true,*/
     watchSlidesVisibility: true,
@@ -64,6 +76,7 @@ var newsSwiper = new Swiper('.swiper-news', {
     slidesPerView: 1,
     mousewheel: false,
     spaceBetween: 10,
+    //preventClicks: false,
     //slidesPerView:4,
     direction: 'vertical',
     lazy: {
@@ -71,7 +84,22 @@ var newsSwiper = new Swiper('.swiper-news', {
     },
     thumbs: {
         swiper: thumbsSwiper,
-    }
+    },
+    on: {
+        slideChangeTransitionStart: function(){
+            if(this.realIndex == 0){
+                title_opacity("#title_1", "#title_2,#title_3,#title_4,#title_5")
+            }else if(this.realIndex == 1){
+                title_opacity("#title_2", "#title_1,#title_3,#title_4,#title_5")
+            }else if(this.realIndex == 2){
+                title_opacity("#title_3", "#title_2,#title_1,#title_4,#title_5")
+            }else if(this.realInde == 3){
+                title_opacity("#title_4", "#title_2,#title_3,#title_1,#title_5")
+            }else{
+                title_opacity("#title_5", "#title_2,#title_3,#title_4,#title_1")
+            }
+        },
+    },
 });
 
 // 前一个/后一个新闻资讯切换
@@ -98,23 +126,28 @@ function changeIcon(add, remove){
     $(add).css("background", "no-repeat 0 1.2rem url(../../static/img/triangle.png)")
     $(remove).css("background", "")
 }
-
+function hash_value(value){
+    if(value=="#index"){
+        $(".index_img ul li").css({"opacity": "1", "margin-top": "10rem"})
+    }
+    else{
+        $(".index_img ul li").css({"opacity": "0", "margin-top": "12rem"})
+    }
+}
 function recognize_url_hash(){
     if(window.location.hash=="#index" || window.location.hash==""){
         changeStyle("#index_head", "#game_head,#news_head,#about_head", "active")
         changeIcon("#right_li_1", "#right_li_2,#right_li_3,#right_li_4")
         changeCss("#index_hr","#game_hr,#news_hr,#about_hr")
-        $(".index_img ul li").css({"opacity": "1", "margin-top": "10rem"})
-        $(".bg_img").css({"background":"no-repeat url(../../static/img/bg_1.png);", "background-size": "cover;"})
+        hash_value("#index")
         $("#index_right").html('<span style="position:relative;margin-left:-1.5rem;font-size:0.9rem;">首页</span>')
         $("#game_right, #news_right, #about_right").html("")
     }else if(window.location.hash=="#game"){
         changeStyle("#game_head", "#index_head,#news_head,#about_head", "active")
         changeIcon("#right_li_2", "#right_li_1,#right_li_3,#right_li_4")
         changeCss("#game_hr","#index_hr,#news_hr,#about_hr")
-        $(".index_img ul li").css({"opacity": "0", "margin-top": "12rem"})
-        $(".bg_img").css({"background":"no-repeat url(../../static/img/bg_1.png);", "background-size": "cover;"})
-        $(".game_dinosaur").css({"margin-left":"-17rem","opacity":"1", "transition":"0.4s all ease-in-out"})
+        hash_value("#game")
+        $(".game_dinosaur").css({"margin-left":"9rem","opacity":"1", "transition":"0.4s all ease-in-out"})
         $(".name_logo").css({"margin-left":"0rem", "opacity":"1", "transition":"0.4s all ease-in-out"})
         $("#game_text").css({"margin-top": "4rem", "opacity":"1", "transition":"0.4s all ease-in-out"})
         $("#game_right").html('<span style="position:relative;margin-left:-1.5rem;font-size:0.9rem;">游戏</span>')
@@ -124,34 +157,23 @@ function recognize_url_hash(){
         changeStyle("#news_head", "#index_head,#game_head,#about_head", "active")
         changeIcon("#right_li_3", "#right_li_2,#right_li_1,#right_li_4")
         changeCss("#news_hr","#index_hr,#game_hr,#about_hr")
-        $(".index_img ul li").css({"opacity": "0;", "margin-top": "12rem"})
-        $(".bg_img").css({"background":"no-repeat url(../../static/img/bg_1.png);", "background-size": "cover;"})
+        hash_value("#news")
         $("#news_right").html('<span style="position:relative;margin-left:-1rem;font-size:0.9rem;">行业资讯</span>')
         $("#game_right, #index_right, #about_right").html("")
         $.post("/news/news_title", function(ret){
             var temp = JSON.parse(ret)
-            $("#news_1, #thumbs_img_1").attr("src", "../media/" + temp.img[0])
-            $("#news_2, #thumbs_img_2").attr("src", "../media/" + temp.img[1])
-            $("#news_3, #thumbs_img_3").attr("src", "../media/" + temp.img[2])
-            $("#news_4, #thumbs_img_4").attr("src", "../media/" + temp.img[3])
-            $("#news_5, #thumbs_img_5").attr("src", "../media/" + temp.img[4])
-            $("#news_id_1").attr("href", "/news/news_content?news_id=" + temp.id[0])
-            $("#news_id_2").attr("href", "/news/news_content?news_id=" + temp.id[1])
-            $("#news_id_3").attr("href", "/news/news_content?news_id=" + temp.id[2])
-            $("#news_id_4").attr("href", "/news/news_content?news_id=" + temp.id[3])
-            $("#news_id_5").attr("href", "/news/news_content?news_id=" + temp.id[4])
-            $("#title_1, #thumbs_title_1").html(temp.title[0])
-            $("#title_2, #thumbs_title_2").html(temp.title[1])
-            $("#title_3, #thumbs_title_3").html(temp.title[2])
-            $("#title_4, #thumbs_title_4").html(temp.title[3])
-            $("#title_5, #thumbs_title_5").html(temp.title[4])
+            for(var i=0;i<5;i++){
+                $("#news_" + (i+1) +",#thumbs_img_" + (i+1)).attr("src", "../media/" + temp.img[i]);
+                // 注意这里优先级问题，直接使用a标签的id  news_id。不会跳转，更改不了页面初始化时的href.没有反应。
+                $("#img_box_" + (i+1) + " a").attr("href", "/news/news_content?news_id=" + temp.id[i]);
+                $("#title_" + (i+1) + ",#thumbs_title_" + (i+1)).html(temp.title[i]);
+            }
         })
     }else{
         changeStyle("#about_head", "#index_head,#game_head,#news_head", "active")
         changeIcon("#right_li_4", "#right_li_2,#right_li_3,#right_li_1")
         changeCss("#about_hr","#index_hr,#game_hr,#news_hr")
-        $(".index_img ul li").css({"opacity": "0", "margin-top": "12rem"})
-        $(".bg_img").css({"background":"no-repeat url(../../static/img/bg_1.png);", "background-size": "cover;"})
+        hash_value("#about")
         $("#about_right").html('<span style="position:relative;margin-left:-1rem;font-size:0.9rem;">关于我们</span>')
         $("#game_right, #news_right, #index_right").html("")
     };
