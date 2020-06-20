@@ -32,8 +32,8 @@
             <div class="title_link">
                 <ul>
                     <li class="li"><a href="/home/index#index" class="active" id="index_head">首页</a></li>
-                    <li class="li"><a href="/home/index#game" id="game_head">游戏</a></li>
-                    <li class="li"><a href="/home/index#news" id="news_head">行业资讯</a></li>
+                    <li class="li"><a href="#" id="game_head">游戏</a></li>
+                    <li class="li"><a href="/home/index#news" id="news_head">资讯</a></li>
                     <li class="li"><a href="/home/index#about" id="about_head">关于我们</a></li>
                 </ul>
                 <div class="hide_title"><img src="{% static 'img/hide_title.png' %}" style="height: 1.5rem;margin-top: 0.5rem;"></div>
@@ -78,8 +78,19 @@
                                     <img style="height:9rem; width:28rem;" src="{% static 'img/name_logo.png' %}">
                                 </div>
                                 <div class="game_text" id="game_text">
+                                    <div class="text_content">
+                                        《从零开始》是一款集生存、建造、驯养收集、副本讨伐为一体的多人同时在线沙盒游戏。游戏为3D LOW-POLY
+                                        风格无缝开放大世界，玩家可任意建造、有限破坏及体验多元的游戏玩法。
+                                    </div>
+                                    <div class="text_content_down">
+                                        作为游戏，高自由度的开放世界玩法已成为标配。但是在我们眼里，所谓开放世界的概念又有点不同。可以说这是
+                                        一款没有生存压力感的生存游戏。你仅需热爱你所热爱的，做你想做的，追求你要的应有的游戏体验。
+                                    </div>
                                     <div class="game_video" id="game_video">
-                                        <img src="{% static 'img/game_video.png' %}">
+                                        <video id="display_video" style="height:100%;width:100%;object-fit:fill" preload="auto" controls>
+                                            <source src="{% static 'img/test.ogg'%}" type="video/ogg">
+                                            您的浏览器不支持video标签</video>
+<!--                                        <img src="{% static 'img/game_video.png' %}">-->
                                     </div>
                                 </div>
                                 <div class="game_dinosaur">
@@ -235,7 +246,7 @@
                 </footer>
             </div>
         </div>
-        <div style="position:absolute;bottom:0;left:50%;"><img src="{% static 'img/PageDown.png'%}"></div>
+        <div style="position:absolute;bottom:0;left:54.5%;"><img src="{% static 'img/PageDown.png'%}"></div>
     </div>
     <div id="bg_img" class="bg_img active_img"></div>
     <!-- Swiper JS -->

@@ -9,7 +9,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     width:100%;
     opacity:0;
     background:no-repeat url(../img/bg_1.png);
-    background-size: 100% 100%;
+    background-size: cover;
     -webkit-transition: all 1s linear;
     -o-transition: all 1s linear;
     transition: all 0.8s ease-in-out;
@@ -53,7 +53,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     width: 11%;
     height: 4rem;
     font-size: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 4rem;
     outline: none;
     text-align:center;
     line-height:100%;
@@ -69,9 +69,9 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
 }
 .index_img {
     width: 80%;
-    margin-left: 11%;
+    margin-left: 15%;
     position: absolute;
-    bottom: 40%;
+    bottom: 25%;
 }
 .index_img ul {
     list-style: none;
@@ -175,6 +175,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
 .right_hr {
     size: 2px;
     display: inline-block;
+    opacity: 0.5;
     width: 100%;
     margin-left: 60%;
     transition: 0.8s all ease-in-out;
@@ -262,6 +263,24 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     opacity: 0;
     position: relative;
     transition: 0.4s all ease-in-out;
+}
+.text_content {
+    position: relative;
+    float: left;
+    margin-left: 16rem;
+    margin-top: 1.5rem;
+    margin-right: 1rem;
+    text-align:left;
+    text-indent: 2rem;
+}
+.text_content_down {
+    position: relative;
+    float: left;
+    margin-left:1rem;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    text-indent: 2rem;
+    text-align: left
 }
 .game_video {
     height: 10rem;
@@ -405,7 +424,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     height: 27rem;
     overflow: hidden;
     display: inline-block;
-    margin-top: 4rem;
+    margin-top: 2.9rem;
     margin-left: 0.8rem;
 }
 .img_box_bg {
@@ -421,8 +440,8 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     width: 47rem;
     text-align: left;
     color: #F2F2F2;
-    height: 2rem;
-    font-size: 1.6rem;
+    height: 3rem;
+    font-size: 2rem;
     position: relative;
     top:2rem;
     left:0;
@@ -434,11 +453,12 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
 .thumbs_title {
     position:absolute;
     text-align: center;
-    width: 12rem;
+    width: 13rem;
     height: 2rem;
     line-height: 2rem;
-    top:40%;
-    left: 1rem;
+    bottom:14%;
+    left: 4rem;
+    font-size: 1.5rem;
     color: #272727;
     font-style: bold;
     background-color: transparent;

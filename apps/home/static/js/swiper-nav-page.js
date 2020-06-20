@@ -10,14 +10,17 @@ var mySwiper = new Swiper('.swiper-container', {
     hashNavigation:true,
     on:{
         setTransition: function() {
-            $(".game_dinosaur").css({"margin-left":"13rem","opacity":"0", "transition":"0.4s all ease-in-out"})
-            $(".name_logo").css({"margin-left":"-7rem", "opacity":"0", "transition":"0.4s all ease-in-out"})
-            $(".game_text").css({"margin-top": "6rem", "opacity": "0", "transition":"0.4s all ease-in-out"})
+            if(window.location.hash != "#game"){
+
+            }
         },
         slideChangeTransitionStart: function(){
             if(this.realIndex == 0){
                 change_bg("no-repeat url(../../static/img/bg_1.png)")
             }else if(this.realIndex == 1){
+                $(".game_dinosaur").css({"margin-left":"13rem","opacity":"0"})
+                $(".name_logo").css({"margin-left":"-7rem", "opacity":"0"})
+                $("#game_text").css({"margin-top": "6rem", "opacity": "0"})
                 change_bg("no-repeat url(../../static/img/bg_2.png)")
             }else if(this.realIndex == 2){
                 change_bg("no-repeat url(../../static/img/bg_3.png)")
@@ -33,6 +36,8 @@ $('#index_head,#index_right').click(function(){
     mySwiper[0].slideTo(0, 1000, true);
 })
 $('#game_head,#game_right,#next_page').click(function(){
+    // 设置延迟是为了点击顶部导航栏时game页面也能出现动画滑入效果，不然直接在.on方法里写，变化太快，没有动画效果。
+    setTimeout("window.location.href = '/home/index#game'",400);
     mySwiper[0].slideTo(1, 1000, true);
 })
 $('#news_head,#news_right').click(function(){
@@ -119,11 +124,11 @@ function changeStyle(add, remove, style_class){
     $(remove).removeClass(style_class)
 }
 function changeCss(add, change, style_css){
-    $(add).css("margin-left","15%")
-    $(change).css("margin-left","60%")
+    $(add).css("margin-left","30%")
+    $(change).css("margin-left","70%")
 }
 function changeIcon(add, remove){
-    $(add).css("background", "no-repeat 0 1.2rem url(../../static/img/triangle.png)")
+    $(add).css("background", "no-repeat 1.5rem 1.25rem url(../../static/img/triangle.png)")
     $(remove).css("background", "")
 }
 function hash_value(value){
@@ -147,9 +152,9 @@ function recognize_url_hash(){
         changeIcon("#right_li_2", "#right_li_1,#right_li_3,#right_li_4")
         changeCss("#game_hr","#index_hr,#news_hr,#about_hr")
         hash_value("#game")
-        $(".game_dinosaur").css({"margin-left":"9rem","opacity":"1", "transition":"0.4s all ease-in-out"})
-        $(".name_logo").css({"margin-left":"0rem", "opacity":"1", "transition":"0.4s all ease-in-out"})
-        $("#game_text").css({"margin-top": "4rem", "opacity":"1", "transition":"0.4s all ease-in-out"})
+        $(".game_dinosaur").css({"margin-left":"9rem","opacity":"1"})
+        $(".name_logo").css({"margin-left":"0rem", "opacity":"1"})
+        $("#game_text").css({"margin-top": "4rem", "opacity":"1"})
         $("#game_right").html('<span style="position:relative;margin-left:-1.5rem;font-size:0.9rem;">游戏</span>')
         $("#index_right, #news_right, #about_right").html("")
         $("#img_delay").css({'opacity':'1;', 'left':'0'})
@@ -158,7 +163,7 @@ function recognize_url_hash(){
         changeIcon("#right_li_3", "#right_li_2,#right_li_1,#right_li_4")
         changeCss("#news_hr","#index_hr,#game_hr,#about_hr")
         hash_value("#news")
-        $("#news_right").html('<span style="position:relative;margin-left:-1rem;font-size:0.9rem;">行业资讯</span>')
+        $("#news_right").html('<span style="position:relative;margin-left:-1.5rem;font-size:0.9rem;">资讯</span>')
         $("#game_right, #index_right, #about_right").html("")
         $.post("/news/news_title", function(ret){
             var temp = JSON.parse(ret)
@@ -174,7 +179,7 @@ function recognize_url_hash(){
         changeIcon("#right_li_4", "#right_li_2,#right_li_3,#right_li_1")
         changeCss("#about_hr","#index_hr,#game_hr,#news_hr")
         hash_value("#about")
-        $("#about_right").html('<span style="position:relative;margin-left:-1rem;font-size:0.9rem;">关于我们</span>')
+        $("#about_right").html('<span style="position:relative;margin-left:0rem;font-size:0.9rem;">关于我们</span>')
         $("#game_right, #news_right, #index_right").html("")
     };
 };
