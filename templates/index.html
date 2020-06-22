@@ -45,10 +45,18 @@
     <div class="right_nav">
             <div class="right_up"></div>
             <ul>
-                <li class="li" id="right_li_1"><a href="/home/index#index" id="index_right"></a><hr id="index_hr" class="right_hr"></li>
-                <li class="li" id="right_li_2"><a href="/home/index#game" id="game_right"></a><hr id="game_hr" class="right_hr"></li>
-                <li class="li" id="right_li_3"><a href="/home/index#news" id="news_right"></a><hr id="news_hr" class="right_hr"></li>
-                <li class="li" id="right_li_4"><a href="/home/index#about" id="about_right"></a><hr id="about_hr" class="right_hr"></li>
+                <li class="li" id="right_li_1"><a href="/home/index#index" id="index_right">
+                    <span class="right_nav_span">首页</span>
+                </a><hr id="index_hr" class="right_hr"></li>
+                <li class="li" id="right_li_2"><a href="/home/index#game" id="game_right">
+                    <span class="right_nav_span">游戏</span>
+                </a><hr id="game_hr" class="right_hr"></li>
+                <li class="li" id="right_li_3"><a href="/home/index#news" id="news_right">
+                    <span class="right_nav_span">资讯</span>
+                </a><hr id="news_hr" class="right_hr"></li>
+                <li class="li" id="right_li_4"><a href="/home/index#about" id="about_right">
+                    <span class="right_nav_span">关于我们</span>
+                </a><hr id="about_hr" class="right_hr"></li>
             </ul>
             <div class="right_down"></div>
     </div>
@@ -83,11 +91,11 @@
                                         风格无缝开放大世界，玩家可任意建造、有限破坏及体验多元的游戏玩法。
                                     </div>
                                     <div class="text_content_down">
-                                        作为游戏，高自由度的开放世界玩法已成为标配。但是在我们眼里，所谓开放世界的概念又有点不同。可以说这是
-                                        一款没有生存压力感的生存游戏。你仅需热爱你所热爱的，做你想做的，追求你要的应有的游戏体验。
+                                        <a href="#"><button type="button" id="" class="go_game"><span style="margin-left:-1.5rem;">进入官网</span></button></a>
                                     </div>
                                     <div class="game_video" id="game_video">
-                                        <video id="display_video" style="height:100%;width:100%;object-fit:fill" preload="auto" controls>
+                                        <div class="video_control" onclick="playPause()"></div>
+                                        <video id="display_video" class="display_video" poster="{% static 'img/pause.png'%}">
                                             <source src="{% static 'img/test.ogg'%}" type="video/ogg">
                                             您的浏览器不支持video标签</video>
 <!--                                        <img src="{% static 'img/game_video.png' %}">-->
@@ -202,10 +210,10 @@
                             </div>
                             </div>
                             <div class="button_div">
-                                <button type="button" id="prev_news" class="button_news button_news_prev"><font style="font-size:1.8rem;">&larr;</font>上一个</button>
+                                <button type="button" id="prev_news" class="button_news button_news_prev">&nbsp;&nbsp;&nbsp;上一个</button>
                                 <a href="/news/news_more"><button type="button" id="news_more" class="button_news button_news_more">
                                     查看更多</button></a>
-                                <button type="button" id="next_news" class="button_news">下一个<font style="font-size:1.8rem;">&rarr;</font></button>
+                                <button type="button" id="next_news" class="button_news">下一个&nbsp;&nbsp;&nbsp;</button>
                             </div>
                         </div>
                     </div>
