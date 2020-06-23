@@ -15,7 +15,6 @@
     <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
-
 </head>
 <body>
 
@@ -108,16 +107,18 @@
 	</div>
     <div id="bg_img" class="bg_img active_img"></div>
     <script>
+    $(".title_link ul").css({'margin-left':'25rem','width':'0','opacity':'0','overflow':'hidden'})
+    $(".hide_title img").css({"transform":"rotate(90deg)","transition":"all 0.5s ease-in-out"})
     $(document).ready(function(){
         $(".hide_title").click(function(){
             if($(".title_link ul").css('width') != '0px'){
                 $(".title_link ul").css({'margin-left':'25rem','width':'0','opacity':'0','overflow':'hidden'})
                 $(".hide_title img").css({"transform":"rotate(90deg)","transition":"all 0.5s ease-in-out"})
-            }else{
-                $(".title_link ul").css({'margin-left':'0','width':'35rem','opacity':'1','overflow':'hidden'})
-                $(".hide_title img").css({"transform":"rotate(0deg)","transition":"all 0.5s ease-in-out"})
-            }
-        })
+           }else{
+              $(".title_link ul").css({'margin-left':'0','width':'35rem','opacity':'1','overflow':'hidden'})
+              $(".hide_title img").css({"transform":"rotate(0deg)","transition":"all 0.5s ease-in-out"})
+          }
+      })
     })
 </script>
 </body>
