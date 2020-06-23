@@ -47,12 +47,12 @@
         表名：资讯表 news 缓存
 >>  字段名称 | 字段名 | 类型 | 属性
 >>  --- | ---| --- |---
-    id   | id | 自增主键int | 主键，链接到资源index     
-    标题 | title | varchar(50) | 
-    内容 | content | HTMLField | tinymce
-    主图 | img | ImageField |
-    保存日期 | add_date | DateTimeField |
-    修改日期 | mod_date | DateTimeField |
+>>    id   | id | 自增主键int | 主键，链接到资源index     
+>>    标题 | title | varchar(50) | 
+>>    内容 | content | HTMLField | tinymce
+>>    主图 | img | ImageField |
+>>    保存日期 | add_date | DateTimeField |
+>>    修改日期 | mod_date | DateTimeField |
  ### 详细设计
     一.整体
         后端利用Django框架，使用python语言实现此web开发。项目名称为company_website
