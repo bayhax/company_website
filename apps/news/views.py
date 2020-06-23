@@ -49,7 +49,7 @@ class NewsContentView(View):
         redis_conn = get_redis_connection('default')
         if redis_conn.exists('news:%d' % news_id):
             news = redis_conn.hmget('news:%d' % news_id, 'title', 'content', 'mod_date')
-            return render(request, 'news.html', {'title': news[0].decode('utf-8'), 'content': news[1].decode('utf-8'),
+            return render(request, 'news_content.html', {'title': news[0].decode('utf-8'), 'content': news[1].decode('utf-8'),
                                                  'mod_date': news[2].decode('utf-8')})
         else:
             news = News.objects.get(id=news_id)
@@ -58,7 +58,7 @@ class NewsContentView(View):
                              {'title': news.title, 'content': news.content,
                               'mod_date': (news.mod_date + timedelta(hours=8)).strftime("%Y-%m-%d %H:%M"),
                               'add_date': (news.add_date + timedelta(hours=8)).strftime("%Y-%m-%d %H:%M")})
-            return render(request, 'news.html', {'title': news.title, 'content': news.content,
+            return render(request, 'news_content.html', {'title': news.title, 'content': news.content,
                                                  'mod_date': news.mod_date})
 
     def post(self, request):
