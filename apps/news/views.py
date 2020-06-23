@@ -128,11 +128,14 @@ class NewsTitleView(View):
         return redirect('/home/index#news')
 
     def post(self, request):
-        # 最新的四则资讯
+        # 最新的五则资讯
         all_title = []
         all_img = []
         all_id = []
-        all_news = News.objects.order_by('id').reverse()[:5]
+        if News.objects.count() >= 5:
+            all_news = News.objects.order_by('id').reverse()[:5]
+        else:
+            all_news = News.objects.all()
         for news in all_news:
             all_title.append(news.title)
             all_img.append(str(news.img))

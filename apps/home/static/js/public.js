@@ -1,9 +1,9 @@
 // 2020.04.04全国抗击疫情哀悼日灰色
 var timestamp2 = (new Date()).valueOf();
-function format(shijianchuo)
+function format(timestamp)
 {
-    //shijianchuo是整数，否则要parseInt转换
-    var time = new Date(shijianchuo);
+    //timestamp是整数，否则要parseInt转换
+    var time = new Date(timestamp);
     var y = time.getFullYear();
     var m = time.getMonth()+1;
     var d = time.getDate();

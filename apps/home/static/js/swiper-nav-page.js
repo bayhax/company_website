@@ -26,12 +26,14 @@ var mySwiper = new Swiper('.swiper-container', {
             if(this.realIndex == 0){
                 changeIcon("#right_li_1", "#right_li_2,#right_li_3,#right_li_4")
                 changeCss("#index_hr","#game_hr,#news_hr,#about_hr")
+                changeStyle("#index_head", "#game_head,#news_head,#about_head", "active")
                 $("#index_right span").css({'opacity':"1"})
                 $("#game_right span,#news_right span,#about_right span").css({'opacity':"0"})
                 change_bg("no-repeat url(../../static/img/bg_1.png)")
             }else if(this.realIndex == 1){
-             changeIcon("#right_li_2", "#right_li_1,#right_li_3,#right_li_4")
-            changeCss("#game_hr","#index_hr,#news_hr,#about_hr")
+                changeIcon("#right_li_2", "#right_li_1,#right_li_3,#right_li_4")
+                changeCss("#game_hr","#index_hr,#news_hr,#about_hr")
+                changeStyle("#game_head", "#index_head,#news_head,#about_head", "active")
                 $("#game_right span").css({'opacity':"1"})
                 $("#index_right span,#news_right span,#about_right span").css({'opacity':"0"})
                 $(".game_dinosaur").css({"margin-left":"13rem","opacity":"0"})
@@ -41,12 +43,14 @@ var mySwiper = new Swiper('.swiper-container', {
             }else if(this.realIndex == 2){
                 changeIcon("#right_li_3", "#right_li_2,#right_li_1,#right_li_4")
                 changeCss("#news_hr","#index_hr,#game_hr,#about_hr")
+                changeStyle("#news_head", "#index_head,#game_head,#about_head", "active")
                 $("#news_right span").css({'opacity':"1"})
                 $("#index_right span,#game_right span,#about_right span").css({'opacity':"0"})
                 change_bg("no-repeat url(../../static/img/bg_3.png)")
             }else{
                 changeIcon("#right_li_4", "#right_li_2,#right_li_3,#right_li_1")
                 changeCss("#about_hr","#index_hr,#game_hr,#news_hr")
+                changeStyle("#about_head", "#index_head,#news_head,#game_head", "active")
                 $("#about_right span").css({'opacity':"1"})
                 $("#index_right span,#news_right span,#game_right span").css({'opacity':"0"})
                 change_bg("no-repeat url(../../static/img/bg_4.png)")
@@ -148,14 +152,6 @@ function changeStyle(add, remove, style_class){
     $(remove).removeClass(style_class)
 }
 
-function hash_value(value){
-    if(value=="#index"){
-        $(".index_img ul li").css({"opacity": "1", "margin-top": "10rem"})
-    }
-    else{
-        $(".index_img ul li").css({"opacity": "0", "margin-top": "12rem"})
-    }
-}
 function recognize_url_hash(){
     if(window.location.hash=="#index" || window.location.hash==""){
         changeIcon("#right_li_1", "#right_li_2,#right_li_3,#right_li_4")
@@ -163,17 +159,12 @@ function recognize_url_hash(){
         $("#index_right span").css({'opacity':"1"})
         $("#game_right span,#news_right span,#about_right span").css({'opacity':"0"})
         changeStyle("#index_head", "#game_head,#news_head,#about_head", "active")
-        hash_value("#index")
     }else if(window.location.hash=="#game"){
-        changeStyle("#game_head", "#index_head,#news_head,#about_head", "active")
-        hash_value("#game")
         $(".game_dinosaur").css({"margin-left":"9rem","opacity":"1"})
         $(".name_logo").css({"margin-left":"0rem", "opacity":"1"})
         $("#game_text").css({"margin-top": "4rem", "opacity":"1"})
         $("#img_delay").css({'opacity':'1;', 'left':'0'})
     }else if(window.location.hash=="#news"){
-        changeStyle("#news_head", "#index_head,#game_head,#about_head", "active")
-        hash_value("#news")
         $.post("/news/news_title", function(ret){
             var temp = JSON.parse(ret)
             for(var i=0;i<5;i++){
@@ -184,10 +175,6 @@ function recognize_url_hash(){
             }
         })
     }else{
-        changeStyle("#about_head", "#index_head,#game_head,#news_head", "active")
-        hash_value("#about")
-
-
     };
 };
 function playPause(){
