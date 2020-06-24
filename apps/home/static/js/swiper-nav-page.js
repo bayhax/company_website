@@ -34,6 +34,7 @@ var mySwiper = new Swiper('.swiper-container', {
                 $("#index_right span").css({'opacity':"1"})
                 $("#game_right span,#news_right span,#about_right span").css({'opacity':"0"})
                 change_bg("no-repeat url(../../static/img/bg_1.png)")
+                $(".page_down").css("display","block")
             }else if(this.realIndex == 1){
                 changeIcon("#right_li_2", "#right_li_1,#right_li_3,#right_li_4")
                 changeCss("#game_hr","#index_hr,#news_hr,#about_hr")
@@ -44,6 +45,7 @@ var mySwiper = new Swiper('.swiper-container', {
                 $(".name_logo").css({"margin-left":"-7rem", "opacity":"0"})
                 $("#game_text").css({"margin-top": "6rem", "opacity": "0"})
                 change_bg("no-repeat url(../../static/img/bg_2.png)")
+                $(".page_down").css("display","block")
             }else if(this.realIndex == 2){
                 changeIcon("#right_li_3", "#right_li_2,#right_li_1,#right_li_4")
                 changeCss("#news_hr","#index_hr,#game_hr,#about_hr")
@@ -51,6 +53,7 @@ var mySwiper = new Swiper('.swiper-container', {
                 $("#news_right span").css({'opacity':"1"})
                 $("#index_right span,#game_right span,#about_right span").css({'opacity':"0"})
                 change_bg("no-repeat url(../../static/img/bg_3.png)")
+                $(".page_down").css("display","block")
             }else{
                 changeIcon("#right_li_4", "#right_li_2,#right_li_3,#right_li_1")
                 changeCss("#about_hr","#index_hr,#game_hr,#news_hr")
@@ -58,6 +61,7 @@ var mySwiper = new Swiper('.swiper-container', {
                 $("#about_right span").css({'opacity':"1"})
                 $("#index_right span,#news_right span,#game_right span").css({'opacity':"0"})
                 change_bg("no-repeat url(../../static/img/bg_4.png)")
+                $(".page_down").css("display","none")
             }
         },
     },
