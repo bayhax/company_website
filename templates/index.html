@@ -32,7 +32,7 @@
             <div class="title_link">
                 <ul>
                     <li class="li"><a href="/home/index#index" class="active" id="index_head">首页</a></li>
-                    <li class="li"><a href="#" id="game_head">游戏</a></li>
+                    <li class="li"><a href="###" id="game_head">游戏</a></li>
                     <li class="li"><a href="/home/index#news" id="news_head">资讯</a></li>
                     <li class="li"><a href="/home/index#about" id="about_head">关于我们</a></li>
                 </ul>
@@ -83,7 +83,7 @@
                         <div class="game_show" id="game_show">
                             <div class="game_con">
                                 <div class="name_logo" id="name_logo">
-                                    <img style="height:9rem; width:28rem;" src="{% static 'img/name_logo.png' %}">
+                                    <img style="height:10rem; width:18rem;" src="{% static 'img/name_logo.png' %}">
                                 </div>
                                 <div class="game_text" id="game_text">
                                     <div class="text_content">
@@ -95,7 +95,7 @@
                                     </div>
                                     <div class="game_video" id="game_video">
                                         <div class="video_control" onclick="playPause()"></div>
-                                        <video id="display_video" class="display_video" poster="{% static 'img/pause.png'%}">
+                                        <video id="display_video" class="display_video" poster="{% static 'img/game_video.png'%}">
                                             <source src="/game/game_video" type="video/ogg">
                                             您的浏览器不支持video标签</video>
 <!--                                        <img src="{% static 'img/game_video.png' %}">-->
@@ -111,7 +111,7 @@
                     <div class="swiper-slide" data-hash="news">
                         <div class="news_box">
                             <!-- 缩略图-->
-                            <div class="swiper-container thumbs" id="thumbs">
+                            <div class="swiper-container thumbs thumbs_bg" id="thumbs">
                                  <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <div class="">

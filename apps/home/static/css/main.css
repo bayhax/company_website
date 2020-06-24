@@ -268,10 +268,11 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     background-size:cover;
 }
 .video_control {
-    background: no-repeat red url(../img/pause.png);
+    cursor: pointer;
+    background: no-repeat url(../img/pause.png);
     height: 3rem;
     width: 3rem;
-    top: 3rem;
+    top: 5rem;
     left: 9rem;
     float: right;
     position: absolute;
@@ -314,6 +315,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     margin-right: 1rem;
     text-align:left;
     text-indent: 2rem;
+    color: #F2F2F2;
 }
 .text_content_down {
     position: relative;
@@ -325,9 +327,9 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     text-align: left
 }
 .game_video {
-    height: 10rem;
+    height: 11.25rem;
     width: 20rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     position: absolute;
     left: -4.5rem;
 }
@@ -376,12 +378,16 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     position: relative;
     float: left;
     /* margin: 3rem 2rem 3rem 20%; */
-    height: 52rem;
+    height: 55rem;
     margin-right: 3rem;
-    left: 7%;
+    left: 12%;
     top: 3%;
-    background: no-repeat 0 -1.9rem url(../img/thumbs.png);
+    /*background: no-repeat 0 -1.9rem url(../img/thumbs.png);*/
 }
+.thumbs_bg {
+    background: no-repeat 0 -1rem url(../img/thumbs.png);
+}
+
 .swiper-news {
     width: 60rem;
     height: 36rem;
@@ -445,18 +451,21 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     transition: all 1s ease-in-out;
 }
 .thumbs_img {
-    height: 12rem;
-    width: 18rem;
-    margin: 0.4rem 0;
-    opacity: 1;
+    height: 10rem;
+    width: 16rem;
+    margin-top:0.3rem;
+    margin-left:-2rem;
+    opacity: 0.4;
     background-color: rgba(255, 255, 255, 0);
-
 }
 .thumbs .swiper-slide {
     height: 100%;
-    opacity: 0.4;
+    opacity: 1;
 }
 .thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+}
+.thumbs .swiper-slide-thumb-active img{
     opacity: 1;
 }
 .thumbs .swiper-slide-thumb-active > div > span{
@@ -504,10 +513,10 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     width: 13rem;
     height: 2rem;
     line-height: 2rem;
-    bottom:14%;
+    bottom:6%;
     left: 4rem;
-    font-size: 1.5rem;
-    color: #272727;
+    font-size: 1.2rem;
+    color: #F2F2F2;
     font-style: bold;
     background-color: transparent;
     /*标题内容过长显示省略号*/

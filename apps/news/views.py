@@ -78,7 +78,6 @@ class NewsMoreView(View):
             temp = dict(zip(title, info))
             fina.append(temp)
         # 分页器，每页显示几条数据
-        fina = fina * 10
         after_range_num = 2  # 当前页前显示 2 页
         before_range_num = 2  # 当前页后显示 2 页
         num_of_display_pages = 8  # 显示页数，num_of_display_pages > after_range_num + before_range_num + 1 + 2
@@ -132,6 +131,7 @@ class NewsTitleView(View):
         all_title = []
         all_img = []
         all_id = []
+        # 数据库是否有大于等于5条资讯。
         if News.objects.count() >= 5:
             all_news = News.objects.order_by('id').reverse()[:5]
         else:

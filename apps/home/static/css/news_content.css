@@ -5,9 +5,11 @@
     height: 6rem;
     width:80%;
     margin: 0 10%;
+    color: #F2F2F2;
 }
 .news_date {
-    font-size: 14px;
+    font-size: 1.4rem;
+    color: #F2F2F2;
     text-align: center;
     height: 2rem;
     line-height: 2rem;

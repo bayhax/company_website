@@ -1,5 +1,5 @@
 function change_bg(img){
-    $(".bg_img").css({"background":img, "background-size": "cover;"})
+    $(".bg_img").css({"background":img, "background-size": "cover"})
 }
 function changeCss(add, change, style_css){
     $(add).css("margin-left","30%")
@@ -8,6 +8,10 @@ function changeCss(add, change, style_css){
 function changeIcon(add, remove){
     $(add).css({"background":"no-repeat 1.5rem 1.31rem url(../../static/img/triangle.png)"})
     $(remove).css({"background":""})
+}
+function changeStyle(add, remove, style_class){
+    $(add).addClass(style_class)
+    $(remove).removeClass(style_class)
 }
 // 整体swiper切换
 var mySwiper = new Swiper('.swiper-container', {
@@ -60,18 +64,18 @@ var mySwiper = new Swiper('.swiper-container', {
 });
 
 // 导航条切换swiper页面
-$('#index_head,#index_right').click(function(){
+$('#index_head').click(function(){
     mySwiper[0].slideTo(0, 1000, true);
 })
-$('#game_head,#game_right,#next_page').click(function(){
+$('#game_head,#next_page').click(function(){
+    mySwiper[0].slideTo(1, 1000, true);
     // 设置延迟是为了点击顶部导航栏时game页面也能出现动画滑入效果，不然直接在.on方法里写，变化太快，没有动画效果。
     setTimeout("window.location.href = '/home/index#game'",400);
-    mySwiper[0].slideTo(1, 1000, true);
 })
-$('#news_head,#news_right').click(function(){
+$('#news_head').click(function(){
     mySwiper[0].slideTo(2, 1000, true);
 })
-$('#about_head,#about_right').click(function(){
+$('#about_head').click(function(){
     mySwiper[0].slideTo(3, 1000, true);
 })
 function title_opacity(add, remove){
@@ -82,11 +86,11 @@ var thumbsSwiper = new Swiper("#thumbs",{
     /*freeMode: true,*/
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
-    spaceBetween: 10,
+    spaceBetween: 5,
 //    slidesPerView:4,
     loop: true,
     loopedSlides : 7,
-    slidesPerView: 4,
+    slidesPerView: 5,
     speed: 1000,
     centeredSlides: true,
     centeredSlidesBounds: true,
@@ -147,10 +151,7 @@ recognize_url_hash();
 window.onhashchange=function(event){
     recognize_url_hash();
 };
-function changeStyle(add, remove, style_class){
-    $(add).addClass(style_class)
-    $(remove).removeClass(style_class)
-}
+
 
 function recognize_url_hash(){
     if(window.location.hash=="#index" || window.location.hash==""){
@@ -160,6 +161,7 @@ function recognize_url_hash(){
         $("#game_right span,#news_right span,#about_right span").css({'opacity':"0"})
         changeStyle("#index_head", "#game_head,#news_head,#about_head", "active")
     }else if(window.location.hash=="#game"){
+        changeStyle("#game_head", "#index_head,#news_head,#about_head", "active")
         $(".game_dinosaur").css({"margin-left":"9rem","opacity":"1"})
         $(".name_logo").css({"margin-left":"0rem", "opacity":"1"})
         $("#game_text").css({"margin-top": "4rem", "opacity":"1"})
@@ -179,13 +181,13 @@ function recognize_url_hash(){
 };
 function playPause(){
     if(display_video.paused){
-        $(".game_video").css({"height": "45rem", "width": "70rem", "position": "absolute", "top": "-20rem"});
-        $(".video_control").css({"top": "38rem", "left": "8rem","background":"no-repeat url(../static/img/play.png)"});
+        $(".game_video").css({"height": "42.19rem", "width": "75rem", "position": "absolute", "top": "-20rem"});
+        $(".video_control").css({"top": "38rem", "left": "5rem","background":"no-repeat url(../static/img/play.png)"});
         $(".game_dinosaur").css({"display": "none"});
         display_video.play();
     }else{
-        $(".game_video").css({"height": "10rem", "width": "20rem", "top":"0"});
-        $(".video_control").css({"top": "3rem", "left": "9rem","background":"no-repeat red url(../static/img/pause.png)"});
+        $(".game_video").css({"height": "11.25rem", "width": "20rem", "top":"0"});
+        $(".video_control").css({"top": "5rem", "left": "9rem","background":"no-repeat url(../static/img/pause.png)"});
         $(".game_dinosaur").css({"display": "inline-block"});
         display_video.pause();
     }

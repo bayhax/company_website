@@ -36,7 +36,7 @@
 	<div class="body_con">
 		<div class="body_container" id="body_container">
             <div class="news_table_con">
-            <div class="news_table">
+                <div class="news_table">
                 {% for news in news_data %}
                    <a href="/news/news_content?news_id={{ news.news_id }}">
                         <div class="news_row" id="{{ news.news_id }}" title="详情">
@@ -46,14 +46,15 @@
                         </div>
                    </a>
                 {% endfor %}
+
+            </div>
                 <div id="pages" class="text-center" >
                     <nav>
-                        <ul class="pagination" style="height:1.5rem;line-height:1.5rem;">
+                        <ul class="pagination" style="height:2rem;line-height:1.5rem;">
                             <!--判断是否有前一页-->
                             {% if news_data.has_previous %}
                             <li style="width:4.5rem;margin-right:1rem;">
-                                <a class="next_prev" href="?page={{ news_data.previous_page_number }}">
-                                    <span style="display: inline-block;position: relative;top: -0.2rem;font-size: 1.3rem;">&larr;</span>上一页</a>
+                                <a class="next_prev" href="?page={{ news_data.previous_page_number }}">上一页</a>
                             </li>
                             {% endif %}
                             {% if first %}
@@ -74,15 +75,13 @@
 
                             {% if news_data.has_next %}
                                 <li style="width:4.6rem;margin-right:1rem;">
-                                    <a class="next_prev" href="?page={{ news_data.next_page_number }}">下一页
-                                        <span style="display: inline-block;position: relative;top: -0.1rem;font-size: 1.2rem;"><b>&rarr;</b></span></a>
+                                    <a class="next_prev" href="?page={{ news_data.next_page_number }}">下一页</a>
                                 </li>
                             {% endif %}
                         </ul>
 
                     </nav>
                 </div>
-            </div>
             </div>
 			<div id="box_footer" class="box_footer">
                 <footer id="footer" class="footer">

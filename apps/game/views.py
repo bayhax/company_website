@@ -29,7 +29,7 @@ def stream_video(request):
     range_header = request.META.get('HTTP_RANGE', '').strip()
     range_re = re.compile(r'bytes\s*=\s*(\d+)\s*-\s*(\d*)', re.I)
     range_match = range_re.match(range_header)
-    path = "./apps/home/static/img/test.ogg"
+    path = "./apps/home/static/img/show_video.mp4"
     size = os.path.getsize(path)
     content_type, encoding = mimetypes.guess_type(path)
     content_type = content_type or 'application/octet-stream'
