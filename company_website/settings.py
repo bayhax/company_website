@@ -27,7 +27,7 @@ SECRET_KEY = '!1uwv_$)&&dl(4@!j=o^kf%i3(gfr7sie!ezqp!4cb(^)ug4na'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definitionpi
 # 注册应用
@@ -127,7 +127,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/home/company_website/media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_ROOT = '/home/company_website/media'
 # 指定收集静态文件的路径
 # STATIC_ROOT = '/home/static'
 # ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'

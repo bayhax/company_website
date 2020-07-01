@@ -28,7 +28,7 @@
 
     <!--网页顶部导航块-->
     <div class="head_nav">
-            <div class="logo"><img src="{% static 'img/Logo.png' %}" alt="logo" height="100%"></div>
+<!--            <div class="logo"><img src="{% static 'img/Logo.png' %}" alt="logo" height="100%"></div>-->
             <div class="title_link">
                 <ul>
                     <li class="li"><a href="/home/index#index" class="active" id="index_head">首页</a></li>
@@ -84,7 +84,7 @@
                         <div class="game_show" id="game_show">
                             <div class="game_con">
                                 <div class="name_logo" id="name_logo">
-                                    <img style="height:10rem; width:18rem;" src="{% static 'img/name_logo.png' %}">
+                                    <img style="height:10rem; width:26rem;" src="{% static 'img/name_logo.png' %}">
                                 </div>
                                 <div class="game_text" id="game_text">
                                     <div class="text_content">
@@ -103,7 +103,7 @@
                                     </div>
                                 </div>
                                 <div class="game_dinosaur">
-                                    <img style="width:24rem;height:37rem;" src="{% static 'img/game_dinosaur.png' %}">
+                                    <img style="width:26.3rem;height:37rem;" src="{% static 'img/game_dinosaur.png' %}">
                                 </div>
                             </div>
 
@@ -150,7 +150,7 @@
                             </div>
                             <!-- 完整图-->
                             <div class="img_box_bg">
-                            <div class="swiper-news">
+                                <div class="swiper-news">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <div class="img_box_con">
@@ -209,13 +209,14 @@
                                     </div>
                                 </div>
                             </div>
-                            </div>
-                            <div class="button_div">
+                                <div class="button_div">
                                 <button type="button" id="prev_news" class="button_news button_news_prev">&nbsp;&nbsp;&nbsp;上一个</button>
                                 <a href="/news/news_more"><button type="button" id="news_more" class="button_news button_news_more">
                                     查看更多</button></a>
                                 <button type="button" id="next_news" class="button_news">下一个&nbsp;&nbsp;&nbsp;</button>
                             </div>
+                            </div>
+
                         </div>
                     </div>
                     <div class="swiper-slide" data-hash="about">
@@ -235,8 +236,10 @@
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
             </div>
-            <!--页面底部滑入式页尾-->
-            <div id="box_footer" class="box_footer">
+
+        </div>
+        <!--页面底部滑入式页尾-->
+        <div id="box_footer" class="box_footer">
                 <footer id="footer" class="footer">
                     <div class="box">
                         <div class="content">
@@ -253,8 +256,7 @@
                         </div>
                     </div>
                 </footer>
-            </div>
-        </div>
+    </div>
         <div class="page_down"><img src="{% static 'img/PageDown.png'%}"></div>
     </div>
     <div id="bg_img" class="bg_img active_img"></div>
@@ -264,5 +266,10 @@
     <script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/swiper-nav-page.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/public.js' %}"></script>
+    <script>
+        $.ajaxSetup({
+            data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+        });
+    </script>
 </body>
 </html>

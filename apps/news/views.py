@@ -2,7 +2,11 @@ import json
 from datetime import timedelta
 
 from django.http import HttpResponse
+from django.middleware.csrf import get_token
 from django.shortcuts import render, redirect
+from django.template import RequestContext
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from django.views.generic import View
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage, InvalidPage
 from django_redis import get_redis_connection
@@ -49,8 +53,9 @@ class NewsContentView(View):
         redis_conn = get_redis_connection('default')
         if redis_conn.exists('news:%d' % news_id):
             news = redis_conn.hmget('news:%d' % news_id, 'title', 'content', 'mod_date')
-            return render(request, 'news_content.html', {'title': news[0].decode('utf-8'), 'content': news[1].decode('utf-8'),
-                                                 'mod_date': news[2].decode('utf-8')})
+            return render(request, 'news_content.html',
+                          {'title': news[0].decode('utf-8'), 'content': news[1].decode('utf-8'),
+                           'mod_date': news[2].decode('utf-8')})
         else:
             news = News.objects.get(id=news_id)
             redis_conn.hdel('news:%d' % news_id)
@@ -59,7 +64,7 @@ class NewsContentView(View):
                               'mod_date': (news.mod_date + timedelta(hours=8)).strftime("%Y-%m-%d %H:%M"),
                               'add_date': (news.add_date + timedelta(hours=8)).strftime("%Y-%m-%d %H:%M")})
             return render(request, 'news_content.html', {'title': news.title, 'content': news.content,
-                                                 'mod_date': news.mod_date})
+                                                         'mod_date': news.mod_date})
 
     def post(self, request):
         pass
@@ -126,7 +131,9 @@ class NewsTitleView(View):
     def get(self, request):
         return redirect('/home/index#news')
 
+    @method_decorator(csrf_exempt)
     def post(self, request):
+        token = get_token(request)
         # 最新的五则资讯
         all_title = []
         all_img = []
@@ -140,4 +147,4 @@ class NewsTitleView(View):
             all_title.append(news.title)
             all_img.append(str(news.img))
             all_id.append(news.id)
-        return HttpResponse(json.dumps({'title': all_title, 'img': all_img, 'id': all_id}))
+        return HttpResponse(json.dumps({'title': all_title, 'img': all_img, 'id': all_id, 'token': token}))

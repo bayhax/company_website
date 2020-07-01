@@ -2,7 +2,7 @@
 # @Time: 5/15/20 7:27 PM
 # @Author:bayhax
 
-from django.urls import path
+from django.urls import path, re_path
 from apps.home import views
 urlpatterns = [
     path('index', views.IndexView.as_view()),  # 首页

@@ -1,0 +1,6 @@
+##ignore files##
+apps/
+*.mp4
+*.ogg
+*.webem
+.

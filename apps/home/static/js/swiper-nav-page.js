@@ -156,6 +156,21 @@ window.onhashchange=function(event){
     recognize_url_hash();
 };
 
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
 
 function recognize_url_hash(){
     if(window.location.hash=="#index" || window.location.hash==""){
@@ -167,10 +182,11 @@ function recognize_url_hash(){
     }else if(window.location.hash=="#game"){
         changeStyle("#game_head", "#index_head,#news_head,#about_head", "active")
         $(".game_dinosaur").css({"margin-left":"9rem","opacity":"1"})
-        $(".name_logo").css({"margin-left":"0rem", "opacity":"1"})
+        $(".name_logo").css({"margin-left":"1rem", "opacity":"1"})
         $("#game_text").css({"margin-top": "4rem", "opacity":"1"})
         $("#img_delay").css({'opacity':'1;', 'left':'0'})
     }else if(window.location.hash=="#news"){
+
         $.post("/news/news_title", function(ret){
             var temp = JSON.parse(ret)
             for(var i=0;i<5;i++){

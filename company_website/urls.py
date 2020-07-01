@@ -15,15 +15,15 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, re_path, include
 
 from company_website import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tinymce', include('tinymce.urls')),  # 富文本编辑器
-    path('home/', include('home.urls')),  # 官网首页
     path('game/', include('game.urls')),  # 游戏介绍
     path('news/', include('news.urls')),  # 行业资讯
     path('about/', include('about.urls')),  # 关于我们
+    path('home/', include('home.urls')),  # 官网首页
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,9 +1,31 @@
+.news_more_bg_img {
+    pointer-events:none;
+    position:fixed;
+    z-index:-1;
+    top:0;left:0;height:0;bottom:0;
+    height:100%;
+    width:100%;
+    opacity:1;
+    background:no-repeat url(../img/bg_3.png);
+    background-size: cover;
+    -webkit-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 0.8s ease-in-out;
+}
 .news_table_con {
     background: no-repeat url(../img/news_more_bg.png);
     width: 100rem;
     height: 50rem;
     margin-top:2.2rem;
     margin-left: 10rem;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top: 41%;
+    left: 41.5%;
 }
 
 .news_table {
@@ -30,7 +52,7 @@
 .news_row::before {
     content: attr(title);
     position: absolute;
-    left: 93.5rem;
+    left: 83.5rem;
     margin-top: 4rem;
     width: 4%;
     line-height: 3.6rem;
