@@ -31,12 +31,13 @@
 <!--            <div class="logo"><img src="{% static 'img/Logo.png' %}" alt="logo" height="100%"></div>-->
             <div class="title_link">
                 <ul>
-                    <li class="li"><a href="/home/index#index" class="active" id="index_head">首页</a></li>
+                    <li class="li"><a href="/#index" class="active" id="index_head">首页</a></li>
                     <li class="li"><a href="###" id="game_head">游戏</a></li>
-                    <li class="li"><a href="/home/index#news" id="news_head">资讯</a></li>
-                    <li class="li"><a href="/home/index#about" id="about_head">关于我们</a></li>
+                    <li class="li"><a href="/#news" id="news_head">资讯</a></li>
+                    <li class="li"><a href="/#about" id="about_head">关于我们</a></li>
                 </ul>
-                <div class="hide_title"><img src="{% static 'img/hide_title.png' %}" style="height: 1.5rem;margin-top: 0.5rem;"></div>
+<!--                <div class="hide_title"><img src="{% static 'img/hide_title.png' %}" style="height: 1.5rem;margin-top: 0.5rem;"></div>-->
+                <div class="hide_title"><img src="{{ hide_title }}" style="height: 1.5rem;margin-top: 0.5rem;"></div>
             </div>
         </div>
 
@@ -45,21 +46,21 @@
     <div class="right_nav">
             <div class="right_up"></div>
             <ul>
-                <li class="li" id="right_li_1"><a href="/home/index#index" id="index_right">
+                <li class="li" id="right_li_1"><a href="/#index" id="index_right">
                     <span class="right_nav_span">首页</span>
                 </a><hr id="index_hr" class="right_hr"></li>
-                <li class="li" id="right_li_2"><a href="/home/index#game" id="game_right">
+                <li class="li" id="right_li_2"><a href="/#game" id="game_right">
                     <span class="right_nav_span">游戏</span>
                 </a><hr id="game_hr" class="right_hr"></li>
-                <li class="li" id="right_li_3"><a href="/home/index#news" id="news_right">
+                <li class="li" id="right_li_3"><a href="/#news" id="news_right">
                     <span class="right_nav_span">资讯</span>
                 </a><hr id="news_hr" class="right_hr"></li>
-                <li class="li" id="right_li_4"><a href="/home/index#about" id="about_right">
+                <li class="li" id="right_li_4"><a href="/#about" id="about_right">
                     <span class="right_nav_span" style="margin-left:0.3rem;">关于我们</span>
                 </a><hr id="about_hr" class="right_hr"></li>
             </ul>
             <div class="right_down"></div>
-         <div class="footer_tip"><img src="{% static 'img/hide_title.png' %}"></div>
+         <div class="footer_tip"><img src="{{ hide_title }}"></div>
     </div>
 
 
@@ -73,7 +74,7 @@
                     <div class="swiper-slide" data-hash="index">
                         <div class="index_con">
                             <div class="index_img">
-                                <img src="{% static 'img/index_name_logo.png' %}">
+                                <img src="{{ index_name_logo }}">
                                 <div>
                                     <button type="button" id="next_page" class="index_next_page">游戏介绍<font style="font-size:1.8rem;"></font></button>
                                 </div>
@@ -84,7 +85,7 @@
                         <div class="game_show" id="game_show">
                             <div class="game_con">
                                 <div class="name_logo" id="name_logo">
-                                    <img style="height:10rem; width:26rem;" src="{% static 'img/name_logo.png' %}">
+                                    <img style="height:10rem; width:26rem;" src="{{ name_logo }}">
                                 </div>
                                 <div class="game_text" id="game_text">
                                     <div class="text_content">
@@ -96,14 +97,15 @@
                                     </div>
                                     <div class="game_video" id="game_video">
                                         <div class="video_control" onclick="playPause()"></div>
-                                        <video id="display_video" class="display_video" poster="{% static 'img/game_video.png'%}">
-                                            <source src="/game/game_video" type="video/ogg">
+                                        <video id="display_video" class="display_video" poster="{{ game_video }}">
+<!--                                            <source src="/game/game_video" type="video/mp4">-->
+                                            <source src="{{ show_video }}" type="video/mp4">
                                             您的浏览器不支持video标签</video>
 <!--                                        <img src="{% static 'img/game_video.png' %}">-->
                                     </div>
                                 </div>
                                 <div class="game_dinosaur">
-                                    <img style="width:26.3rem;height:37rem;" src="{% static 'img/game_dinosaur.png' %}">
+                                    <img style="width:26.3rem;height:37rem;" src="{{ game_dinosaur }}">
                                 </div>
                             </div>
 
@@ -244,8 +246,8 @@
                     <div class="box">
                         <div class="content">
                             <p>
-                                <a href="/home/supervisor" target="_blank">家长监护工程</a><span>|</span>
-                                <a href="/home/dispute" target="_blank">纠纷处理</a>
+                                <a href="/supervisor" target="_blank">家长监护工程</a><span>|</span>
+                                <a href="/dispute" target="_blank">纠纷处理</a>
                             </p>
                             <p><span>健康游戏忠告：抵制不良游戏，拒绝盗版游戏，注意自我保护，谨防上当受骗，适度游戏益脑，沉迷游戏伤身，合理安排时间，享受健康生活</span></p>
                             <p><span>北京第零世界科技有限公司 地址：北京市朝阳区建国路15号院甲1号北岸1292三间房创意生活园区9-7291 电话：010-60607973</span></p>
@@ -257,7 +259,7 @@
                     </div>
                 </footer>
     </div>
-        <div class="page_down"><img src="{% static 'img/PageDown.png'%}"></div>
+        <div class="page_down"><img src="{{ PageDown }}"></div>
     </div>
     <div id="bg_img" class="bg_img active_img"></div>
     <!-- Swiper JS -->

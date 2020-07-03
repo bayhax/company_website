@@ -191,13 +191,16 @@
     color: yellow;
     display: block;
 }*/
+:root {
+    --news_more_bg: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/news_more_bg.png");
+}
 .supervisor {
     color: #F2F2F2;
     width: 100rem;
     height: 50rem;
     margin: auto;
     margin-top: 4rem;
-    background: no-repeat url(../img/news_more_bg.png);
+    background: no-repeat var(--news_more_bg);
     background-color: transparent;
 }
 .supervisor_explain {

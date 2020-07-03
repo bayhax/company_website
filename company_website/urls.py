@@ -25,5 +25,5 @@ urlpatterns = [
     path('game/', include('game.urls')),  # 游戏介绍
     path('news/', include('news.urls')),  # 行业资讯
     path('about/', include('about.urls')),  # 关于我们
-    path('home/', include('home.urls')),  # 官网首页
+    re_path(r'^', include('home.urls')),  # 官网首页
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,3 +1,19 @@
+:root {
+    --bg_1: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/bg_1.png");
+    --button_next_prev: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/button_next_prev.png");
+    --triangle: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/triangle.png");
+    --up: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/up.png");
+    --down: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/down.png");
+    --right: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/right.png");
+    --game_bottom: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/game_bottom.png");
+    --pause: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/pause.png");
+    --game_text: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/game_text.png");
+    --arrow: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/arrow.png");
+    --thumbs: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/thumbs.png");
+    --arrow_prev: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/arrow_prev.png");
+    --news_more_bg: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/news_more_bg.png");
+    --news_bottom: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/news_bottom.png");
+}
 body{font-family:'Microsoft Yahei';font-size:14px;color:#666;}
 html,body{height:100%;min-width: 1000px;min-height: 1000px;}
 .bg_img{
@@ -8,7 +24,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     height:100%;
     width:100%;
     opacity:0;
-    background:no-repeat url(../img/bg_1.png);
+    background:no-repeat var(--bg_1);
     background-size: cover;
     -webkit-transition: all 1s linear;
     -o-transition: all 1s linear;
@@ -62,7 +78,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     -webkit-box-shadow:0px 1px 2px rgba(0,0,0,0.2);
             box-shadow:0px 1px 2px rgba(0,0,0,0.2);
     text-shadow:0px 1px 1px rgba(0,0,0,0.3);
-    background: url(../img/button_next_prev.png);
+    background: var(--button_next_prev);
 }
 .index_next_page:hover {
     background: #e27a3f;
@@ -187,7 +203,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
 .right_icon {
     opacity:1;
     transition: 1s opacity ease-in-out;
-    background: no-repeat 0 0 url(../img/triangle.png);
+    background: no-repeat 0 0 var(--triangle);
 }
 .right_nav {
     font-size: 0.7rem;
@@ -203,19 +219,19 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     transition:all 0.5s ease-in-out;
 }
 .right_up {
-    background: no-repeat 83.3% url(../img/up.png);
+    background: no-repeat 83.3% var(--up);
     background-color: transparent;
     height: 2rem;
     margin-top: 1rem;
 }
 .right_down {
-    background: no-repeat 83.3% url(../img/down.png);
+    background: no-repeat 83.3% var(--down);
     background-color: transparent;
     height: 2rem;
 
 }
 .right_nav ul {
-    background: no-repeat 80% url(../img/right.png);
+    background: no-repeat 80% var(--right);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -255,7 +271,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     height: 34.5rem;
     margin-top: 10rem;
     margin-left: 3%;
-    background: url(../img/game_bottom.png);
+    background: var(--game_bottom);
     display: inline-block
 }
 .display_video {
@@ -269,7 +285,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
 }
 .video_control {
     cursor: pointer;
-    background: no-repeat url(../img/pause.png);
+    background: no-repeat var(--pause);
     height: 3rem;
     width: 3rem;
     top: 5rem;
@@ -286,7 +302,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     transition: 0.4s all ease-in-out;
 }
 .game_text {
-    background: url(../img/game_text.png);
+    background: var(--game_text);
     height: 21rem;
     width: 34rem;
     margin-top: 6rem;
@@ -302,10 +318,10 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     margin-top: 1rem;
     border: 0;
     color: #272727;
-    background: no-repeat #EFC94C 83% 55% url(../img/arrow.png);
+    background: no-repeat #EFC94C 83% 55% var(--arrow);
 }
 .go_game:hover {
-    background:no-repeat #e27a3f 83% 55% url(../img/arrow.png);
+    background:no-repeat #e27a3f 83% 55% var(--arrow);
 }
 .text_content {
     position: relative;
@@ -384,8 +400,9 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     top: 3%;
     /*background: no-repeat 0 -1.9rem url(../img/thumbs.png);*/
 }
+
 .thumbs_bg {
-    background: no-repeat 0 -1rem url(../img/thumbs.png);
+    background: no-repeat 0 -1rem var(--thumbs);
 }
 
 .swiper-news {
@@ -427,11 +444,12 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     text-shadow:0px 1px 1px rgba(0,0,0,0.3);
     background: #45b29d;
 }
+
 #prev_news {
-    background: no-repeat #45b29d 15% 50% url(../img/arrow_prev.png)
+    background: no-repeat #45b29d 15% 50% var(--arrow_prev)
 }
 #next_news {
-    background: no-repeat #45b29d 86% 52% url(../img/arrow.png)
+    background: no-repeat #45b29d 86% 52% var(--arrow)
 }
 .news_box .button_news:hover{
     background:#e27a3f;
@@ -483,13 +501,14 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     margin-top: 2.9rem;
     margin-left: 0.8rem;
 }
+
 .img_box_bg {
     position: relative;
     width: 56.3rem;
     height: 35rem;
     left: 40%;
     top: 9.5rem;
-    background: no-repeat url(../img/news_bottom.png)
+    background: no-repeat var(--news_bottom)
 }
 .img_box_title {
     display: inline-block;
@@ -666,12 +685,13 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     margin: 10px;
     text-align: left;
 }
+
 .news {
     width: 100rem;
     height: 50rem;
     margin: auto;
     margin-top: 4rem;
-    background: no-repeat url(../img/news_more_bg.png);
+    background: no-repeat var(--news_more_bg);
     background-color: transparent;
     overflow: auto;
 }

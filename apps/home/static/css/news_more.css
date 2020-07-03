@@ -1,3 +1,11 @@
+:root {
+    --news_more_bg: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/news_more_bg.png");
+    --news_row: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/news_row.png");
+    --add: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/add.png");
+    --circle: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/circle.png");
+    --arrow_prev: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/arrow_prev.png");
+    --arrow: url("https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/arrow.png");
+}
 .news_more_bg_img {
     pointer-events:none;
     position:fixed;
@@ -13,7 +21,7 @@
     transition: all 0.8s ease-in-out;
 }
 .news_table_con {
-    background: no-repeat url(../img/news_more_bg.png);
+    background: no-repeat var(--news_more_bg);
     width: 100rem;
     height: 50rem;
     margin-top:2.2rem;
@@ -47,7 +55,7 @@
     margin-left: 5%;
     color: #F2F2F2;
     font-size: 1.rem;
-    background: url(../img/news_row.png)
+    background: var(--news_row);
 }
 .news_row::before {
     content: attr(title);
@@ -59,13 +67,13 @@
     height: 3.5rem;
     -webkit-transform: translate(-20%, -50%);
     padding: 0 2rem;
-    background: no-repeat 6rem 1.3rem #45b29d url(../img/add.png);
+    background: no-repeat 6rem 1.3rem #45b29d var(--add);
     font-size: 1.3rem;
     color: #272727;
     transition: all 0.3s ease-in-out;
 }
 .news_row:hover::before{
-    background: no-repeat 6rem 1.3rem #e27a3f url(../img/circle.png);
+    background: no-repeat 6rem 1.3rem #e27a3f var(--circle);
 }
 .news_table .news_row:hover {
     background: #3f505a;
@@ -178,8 +186,8 @@
 
 }
 #prev {
-    background: no-repeat #45b29d 15% 50% url(../img/arrow_prev.png)
+    background: no-repeat #45b29d 15% 50% var(--arrow_prev);
 }
 #next {
-    background: no-repeat #45b29d 86% 52% url(../img/arrow.png)
+    background: no-repeat #45b29d 86% 52% var(--arrow);
 }

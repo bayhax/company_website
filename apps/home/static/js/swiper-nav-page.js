@@ -1,3 +1,10 @@
+triangle = "https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/triangle.png"
+play = "https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/play.png"
+pause = "https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/pause.png"
+bg_1 = "https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/bg_1.png"
+bg_2 = "https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/bg_2.png"
+bg_3 = "https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/bg_3.png"
+bg_4 = "https://company-website-1253454674.cos.ap-beijing.myqcloud.com/img/bg_4.png"
 function change_bg(img){
     $(".bg_img").css({"background":img, "background-size": "cover"})
 }
@@ -6,7 +13,7 @@ function changeCss(add, change, style_css){
     $(change).css("margin-left","70%")
 }
 function changeIcon(add, remove){
-    $(add).css({"background":"no-repeat 1.5rem 1.31rem url(../../static/img/triangle.png)"})
+    $(add).css({"background":"no-repeat 1.5rem 1.31rem url(" + triangle + ")"})
     $(remove).css({"background":""})
 }
 function changeStyle(add, remove, style_class){
@@ -33,7 +40,7 @@ var mySwiper = new Swiper('.swiper-container', {
                 changeStyle("#index_head", "#game_head,#news_head,#about_head", "active")
                 $("#index_right span").css({'opacity':"1"})
                 $("#game_right span,#news_right span,#about_right span").css({'opacity':"0"})
-                change_bg("no-repeat url(../../static/img/bg_1.png)")
+                change_bg("no-repeat url(" + bg_1 + ")")
                 $(".page_down").css("display","block")
             }else if(this.realIndex == 1){
                 changeIcon("#right_li_2", "#right_li_1,#right_li_3,#right_li_4")
@@ -44,7 +51,7 @@ var mySwiper = new Swiper('.swiper-container', {
                 $(".game_dinosaur").css({"margin-left":"13rem","opacity":"0"})
                 $(".name_logo").css({"margin-left":"-7rem", "opacity":"0"})
                 $("#game_text").css({"margin-top": "6rem", "opacity": "0"})
-                change_bg("no-repeat url(../../static/img/bg_2.png)")
+                change_bg("no-repeat url(" + bg_2 + ")")
                 $(".page_down").css("display","block")
             }else if(this.realIndex == 2){
                 changeIcon("#right_li_3", "#right_li_2,#right_li_1,#right_li_4")
@@ -52,7 +59,7 @@ var mySwiper = new Swiper('.swiper-container', {
                 changeStyle("#news_head", "#index_head,#game_head,#about_head", "active")
                 $("#news_right span").css({'opacity':"1"})
                 $("#index_right span,#game_right span,#about_right span").css({'opacity':"0"})
-                change_bg("no-repeat url(../../static/img/bg_3.png)")
+                change_bg("no-repeat url(" + bg_3 + ")")
                 $(".page_down").css("display","block")
             }else{
                 changeIcon("#right_li_4", "#right_li_2,#right_li_3,#right_li_1")
@@ -60,7 +67,7 @@ var mySwiper = new Swiper('.swiper-container', {
                 changeStyle("#about_head", "#index_head,#news_head,#game_head", "active")
                 $("#about_right span").css({'opacity':"1"})
                 $("#index_right span,#news_right span,#game_right span").css({'opacity':"0"})
-                change_bg("no-repeat url(../../static/img/bg_4.png)")
+                change_bg("no-repeat url(" + bg_4 + ")")
                 $(".page_down").css("display","none")
             }
         },
@@ -202,12 +209,12 @@ function recognize_url_hash(){
 function playPause(){
     if(display_video.paused){
         $(".game_video").css({"height": "42.19rem", "width": "75rem", "position": "absolute", "top": "-20rem"});
-        $(".video_control").css({"top": "38rem", "left": "5rem","background":"no-repeat url(../static/img/play.png)"});
+        $(".video_control").css({"top": "38rem", "left": "5rem","background":"no-repeat url(" + play + ")"});
         $(".game_dinosaur").css({"display": "none"});
         display_video.play();
     }else{
         $(".game_video").css({"height": "11.25rem", "width": "20rem", "top":"0"});
-        $(".video_control").css({"top": "5rem", "left": "9rem","background":"no-repeat url(../static/img/pause.png)"});
+        $(".video_control").css({"top": "5rem", "left": "9rem","background":"no-repeat url(" + pause + ")"});
         $(".game_dinosaur").css({"display": "inline-block"});
         display_video.pause();
     }
