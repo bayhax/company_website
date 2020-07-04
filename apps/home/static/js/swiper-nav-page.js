@@ -81,7 +81,7 @@ $('#index_head').click(function(){
 $('#game_head,#next_page').click(function(){
     mySwiper[0].slideTo(1, 1000, true);
     // 设置延迟是为了点击顶部导航栏时game页面也能出现动画滑入效果，不然直接在.on方法里写，变化太快，没有动画效果。
-    setTimeout("window.location.href = '/home/index#game'",400);
+    setTimeout("window.location.href = '/#game'",400);
 })
 $('#news_head').click(function(){
     mySwiper[0].slideTo(2, 1000, true);
